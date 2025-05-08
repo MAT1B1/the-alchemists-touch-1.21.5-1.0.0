@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.matibi.thealchemiststouch.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"BrewingStandAccessor",
+		"BrewingStandBlockEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

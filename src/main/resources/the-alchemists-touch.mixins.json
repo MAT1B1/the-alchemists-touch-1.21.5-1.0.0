@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"BrewingStandAccessor",
-		"BrewingStandBlockEntityMixin"
+		"BrewingStandBlockEntityMixin",
+		"SplashPotionItemMixin",
+		"LingeringPotionItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -21,13 +21,9 @@ public class TheAlchemistsTouch implements ModInitializer {
 		ModEffects.register();
 
 		// max stack des potions
-		DefaultItemComponentEvents.MODIFY.register(context -> {
-			context.modify(item ->
-							item == Items.POTION || item == Items.SPLASH_POTION || item == Items.LINGERING_POTION,
-					(builder, item) -> {
-						builder.add(DataComponentTypes.MAX_STACK_SIZE, 16);
-					}
-			);
-		});
+		DefaultItemComponentEvents.MODIFY.register(context -> context.modify(item ->
+                        item == Items.POTION || item == Items.SPLASH_POTION || item == Items.LINGERING_POTION,
+                (builder, item) -> builder.add(DataComponentTypes.MAX_STACK_SIZE, 16)
+        ));
 	}
 }

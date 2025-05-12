@@ -1,5 +1,6 @@
 package com.matibi.thealchemiststouch;
 
+import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.potion.ModPotion;
 import net.fabricmc.api.ModInitializer;
 
@@ -16,8 +17,8 @@ public class TheAlchemistsTouch implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
 		ModPotion.register();
+		ModEffects.register();
 
 		// max stack des potions
 		DefaultItemComponentEvents.MODIFY.register(context -> {

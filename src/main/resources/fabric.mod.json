@@ -3,9 +3,10 @@
 	"id": "the-alchemists-touch",
 	"version": "${version}",
 	"name": "The Alchemist’s Touch",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "The mod aim at making potions better",
+
 	"authors": [
-		"Me!"
+		"Matibi"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

@@ -69,6 +69,7 @@ public class ModPotion {
             // changement de base, mais moins efficace que de farmer des nether wart
             builder.registerPotionRecipe(Potions.WATER, Items.INK_SAC, Potions.AWKWARD);
             // TODO : trouver un meilleur ingredient
+            // TODO : ajouter les potions longues et les potions amplifié
 
             // potions accessible early
             builder.registerPotionRecipe(Potions.AWKWARD, Items.MAGMA_BLOCK, Potions.FIRE_RESISTANCE);
@@ -91,7 +92,7 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.FIRE_RESISTANCE, Items.FERMENTED_SPIDER_EYE, ModPotion.IGNITION);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.ENDER_PEARL, ModPotion.TELEPORTATION);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.CACTUS, ModPotion.THORNS);
-            builder.registerPotionRecipe(Potions.AWKWARD, Items.CACTUS, ModPotion.BRAIN_WASHING);
+            builder.registerPotionRecipe(Potions.AWKWARD, Items.AMETHYST_SHARD, ModPotion.BRAIN_WASHING);
         });
     }
 

@@ -8,12 +8,4 @@ public class BrainwashingEffect extends StatusEffect {
     public BrainwashingEffect() {
         super(StatusEffectCategory.HARMFUL, 0x9933FF);
     }
-
-    @Override
-    public void onApplied(LivingEntity entity, int amplifier) {
-        // Log de debug
-        if (!entity.getWorld().isClient) {
-            System.out.println("[BrainwashingEffect] Applied to " + entity.getName().getString());
-        }
-    }
 }

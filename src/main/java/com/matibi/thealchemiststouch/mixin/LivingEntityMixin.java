@@ -22,8 +22,11 @@ public abstract class LivingEntityMixin {
         if (newEffect.getEffectType() == ModEffects.REACTIVATION)  return;
 
         if (entity.hasStatusEffect(ModEffects.REACTIVATION)) {
-            int additionalDuration = newEffect.getDuration();
-
+            int newDuration = 30 * 20;
+            for (StatusEffectInstance active : entity.getStatusEffects()) {
+                if (active.getEffectType().equals(ModEffects.REACTIVATION))
+                    newDuration += active.getAmplifier() * 30 * 20;
+            }
             for (StatusEffectInstance active : entity.getStatusEffects()) {
                 if (!active.getEffectType().equals(newEffect.getEffectType())
                     && !active.getEffectType().equals(ModEffects.REACTIVATION)
@@ -31,7 +34,7 @@ public abstract class LivingEntityMixin {
                     shouldUpdate = false;
                     entity.addStatusEffect(new StatusEffectInstance(
                             active.getEffectType(),
-                            active.getDuration() + additionalDuration,
+                            active.getDuration() + newDuration,
                             active.getAmplifier(),
                             active.isAmbient(),
                             active.shouldShowParticles(),

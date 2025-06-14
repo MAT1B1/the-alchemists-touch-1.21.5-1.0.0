@@ -99,7 +99,7 @@ Turns current potion effects into infinite-duration ones, but there is a catch, 
 </details>
 
 
-##Plan for the future:
+## Plan for the future:
 - Potions that interact with blocks and environment
 - Alchemical cauldron to combine potion effects
 - More Potions

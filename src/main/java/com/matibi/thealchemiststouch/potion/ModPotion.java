@@ -123,10 +123,10 @@ public class ModPotion {
     public static RegistryEntry<Potion> STRONG_SATURATION = registerPotion("saturation", "strong_saturation",
             ModEffects.SATURATION, 20 * 45, 1);
 
-    public static RegistryEntry<Potion> ACTIVATION = registerPotion("activation", "activation",
+    /*public static RegistryEntry<Potion> ACTIVATION = registerPotion("activation", "activation",
             ModEffects.ACTIVATION, 20 * 60 * 3, 0);
     public static RegistryEntry<Potion> LONG_ACTIVATION = registerPotion("activation", "long_activation",
-            ModEffects.ACTIVATION, 20 * 60 * 8, 0);
+            ModEffects.ACTIVATION, 20 * 60 * 8, 0);*/
 
     public static RegistryEntry<Potion> DOUBLEHEALTH = registerPotion("doublehealth", "doublehealth",
             ModEffects.DOUBLEHEALTH, 1, 0);
@@ -180,7 +180,7 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.COPPER_INGOT, ModPotion.ALCHEMIST);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.NETHER_WART, ModPotion.DEATH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.BEETROOT, ModPotion.SATURATION);
-            builder.registerPotionRecipe(Potions.AWKWARD, Items.REDSTONE_BLOCK, ModPotion.ACTIVATION);
+            //builder.registerPotionRecipe(Potions.AWKWARD, Items.REDSTONE_BLOCK, ModPotion.ACTIVATION);
             builder.registerPotionRecipe(Potions.STRONG_HEALING, Items.GOLDEN_APPLE, ModPotion.DOUBLEHEALTH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotion.RESURRECTION);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.GOLDEN_APPLE, ModPotion.INFINITY);
@@ -205,7 +205,7 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.BRAIN_WASHING, Items.REDSTONE, ModPotion.LONG_BRAIN_WASHING);
             builder.registerPotionRecipe(ModPotion.FROST, Items.REDSTONE, ModPotion.LONG_FROST);
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.REDSTONE, ModPotion.LONG_SATURATION);
-            builder.registerPotionRecipe(ModPotion.ACTIVATION, Items.REDSTONE, ModPotion.LONG_ACTIVATION);
+            //builder.registerPotionRecipe(ModPotion.ACTIVATION, Items.REDSTONE, ModPotion.LONG_ACTIVATION);
             //builder.registerPotionRecipe(ModPotion.SILENCE, Items.REDSTONE, ModPotion.LONG_SILENCE);
 
             // version strong

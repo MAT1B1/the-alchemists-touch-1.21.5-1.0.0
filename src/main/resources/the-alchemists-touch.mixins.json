@@ -5,18 +5,18 @@
 	"mixins": [
 		"BrewingStandAccessor",
 		"BrewingStandBlockEntityMixin",
-		"SplashPotionItemMixin",
+		"EntityMixin",
+		"HungerManagerAccessor",
 		"LingeringPotionItemMixin",
 		"LiquidWalkerMixin",
 		"LivingEntityMixin",
-		"PlayerEntityMixin",
 		"MerchantEntityMixin",
-		"PlayerInputMixin",
-		"MouseMixin",
 		"MobEntityMixin",
-		"HungerManagerAccessor",
-		"LivingEntityMixin",
-      	"ServerWorldMixin"
+		"MouseMixin",
+		"PlayerEntityMixin",
+		"PlayerInputMixin",
+		"ServerWorldMixin",
+		"SplashPotionItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

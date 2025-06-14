@@ -9,6 +9,15 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 - Cooldowns, stackable potions
 - Brewing system rebalanced with ingredient rarity and origin
 
+## Potion available early
+
+- Lava bucket can be use as a fuel for a brewing stand, but it is way less efficient than blaze powder
+- New craftable item which can be used like nether wart, but it is harder to make
+<details>
+<summary>**Crafting Recipe:**)</summary>
+</details>
+
+
 ## Potion List
 
 <details>

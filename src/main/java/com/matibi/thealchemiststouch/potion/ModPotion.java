@@ -142,10 +142,10 @@ public class ModPotion {
     /*public static RegistryEntry<Potion> SILENCE = registerPotion("silence", "silence",
             ModEffects.SILENCE, 20 * 60 * 3, 0);
     public static RegistryEntry<Potion> LONG_SILENCE = registerPotion("silence", "long_silence",
-            ModEffects.SILENCE, 20 * 60 * 8, 0);*/
+            ModEffects.SILENCE, 20 * 60 * 8, 0);
 
     public static RegistryEntry<Potion> SEDATIVE = registerPotion("sedative", "sedative",
-            ModEffects.SEDATIVE, 20 * 3, 0);
+            ModEffects.SEDATIVE, 20 * 3, 0);*/
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod potions for " + TheAlchemistsTouch.MOD_ID);
@@ -185,7 +185,7 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotion.RESURRECTION);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.GOLDEN_APPLE, ModPotion.INFINITY);
             //builder.registerPotionRecipe(Potions.AWKWARD, Items.WHITE_WOOL, ModPotion.SILENCE);
-            builder.registerPotionRecipe(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotion.SEDATIVE);
+            //builder.registerPotionRecipe(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotion.SEDATIVE);
 
             // version longue
             builder.registerPotionRecipe(ModPotion.LEVITATION, Items.REDSTONE, ModPotion.LONG_LEVITATION);

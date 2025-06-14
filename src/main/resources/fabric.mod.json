@@ -3,16 +3,16 @@
 	"id": "the-alchemists-touch",
 	"version": "${version}",
 	"name": "The Alchemist’s Touch",
-	"description": "The mod aim at making potions better",
+	"description": "The Alchemist’s Touch reworks Minecraft’s potion system with new effects, early-game ingredients, and advanced alchemical interactions.",
 
 	"authors": [
 		"Matibi"
 	],
 	"contact": {
-		"homepage": "",
+		"homepage": "https://github.com/MAT1B1/the-alchemists-touch-template-1.21.5",
 		"sources": "https://github.com/MAT1B1/the-alchemists-touch-template-1.21.5"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/the-alchemists-touch/icon.png",
 	"environment": "*",
 	"entrypoints": {

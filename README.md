@@ -106,5 +106,5 @@ Turns current potion effects into infinite-duration ones, but there is a catch, 
 > A smarter and more immersive way to craft and use potions in Minecraft.
 
 ## If you have an issue with the mod
-- Instagram : mathias._.bgl
+- Instagram : @mathias._.bgl
 - Mail : mathias.bagal@gmail.com

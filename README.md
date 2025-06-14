@@ -208,15 +208,6 @@ Fills the hunger bar and prevents it from decreasing for a while.
 </details>
 
 <details>
-<summary><strong>⚡ Activation</strong></summary>  
-The entity activates blocks as if powered by redstone.  
-  <br>
-<sub><strong>Base:</strong> Awkward Potion<br><strong>Ingredient:</strong> Redstone Block</sub>  
-  <br>
-  <br>
-</details>
-
-<details>
 <summary><strong>❤️‍🔥 Double Health</strong></summary>  
 Doubles max health (similar to Absorption).  
   <br>

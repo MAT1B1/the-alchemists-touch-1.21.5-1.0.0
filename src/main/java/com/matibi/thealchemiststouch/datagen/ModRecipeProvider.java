@@ -31,7 +31,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(Items.FERMENTED_SPIDER_EYE)
                         .input(Items.BONE_MEAL)
                         .input(Items.RAW_COPPER)
-                        .input(Items.BOWL)
+                        .input(Items.BOWL, 8)
                         .criterion(hasItem(ModItems.POISONOUS_BEETROOT), conditionsFromItem(ModItems.POISONOUS_BEETROOT))
                         .criterion(hasItem(ModItems.POISONOUS_CARROT), conditionsFromItem(ModItems.POISONOUS_CARROT))
                         .criterion(hasItem(Items.POISONOUS_POTATO), conditionsFromItem(Items.POISONOUS_POTATO))

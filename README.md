@@ -14,7 +14,7 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 - Lava bucket can be use as a fuel for a brewing stand, but it is way less efficient than blaze powder
 - New craftable item which can be used like nether wart, but it is harder to make
 <details>
-<summary>**Crafting Recipe:**)</summary>
+<summary><strong>New item crafting recipe:</strong></summary>
 </details>
 
 
@@ -99,7 +99,7 @@ Turns current potion effects into infinite-duration ones, but there is a catch, 
 </details>
 
 
-**Plan for the future:**
+##Plan for the future:
 - Potions that interact with blocks and environment
 - Alchemical cauldron to combine potion effects
 - More Potions

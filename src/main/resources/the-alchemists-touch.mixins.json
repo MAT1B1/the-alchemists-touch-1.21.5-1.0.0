@@ -14,7 +14,9 @@
 		"PlayerInputMixin",
 		"MouseMixin",
 		"MobEntityMixin",
-		"HungerManagerAccessor"
+		"HungerManagerAccessor",
+		"LivingEntityMixin",
+      	"ServerWorldMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

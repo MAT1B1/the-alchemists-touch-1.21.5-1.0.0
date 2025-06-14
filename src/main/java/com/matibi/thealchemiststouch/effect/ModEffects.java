@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.effect;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
+import com.matibi.thealchemiststouch.effect.custom.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -63,14 +64,17 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> DOUBLEHEALTH = registerStatusEffects("doublehealth",
             new DoubleHealthEffect());
 
-    public static final RegistryEntry<StatusEffect> INFINITY = registerStatusEffects("infinity",
-            new InfinityEffect());
-
     public static final RegistryEntry<StatusEffect> RESURRECTION = registerStatusEffects("resurrection",
             new ResurrectionEffect());
 
-    public static final RegistryEntry<StatusEffect> MIXED = registerStatusEffects("mixed",
-            new MixedEffect());
+    public static final RegistryEntry<StatusEffect> INFINITY = registerStatusEffects("infinity",
+            new InfinityEffect());
+
+    public static final RegistryEntry<StatusEffect> SILENCE = registerStatusEffects("silence",
+            new SilenceEffect());
+
+    public static final RegistryEntry<StatusEffect> SEDATIVE = registerStatusEffects("sedative",
+            new SedativeEffect());
 
     private static RegistryEntry<StatusEffect> registerStatusEffects(String name, StatusEffect effect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(TheAlchemistsTouch.MOD_ID, name), effect);

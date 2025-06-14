@@ -2,6 +2,7 @@ package com.matibi.thealchemiststouch.potion;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
+import com.matibi.thealchemiststouch.item.ModItems;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -138,15 +139,20 @@ public class ModPotion {
     public static RegistryEntry<Potion> INFINITY = registerPotion("infinity", "infinity",
             ModEffects.INFINITY, 1, 0);
 
-    public static final RegistryEntry<Potion> MIXED = registerPotion("mixed", "mixed",
-            ModEffects.MIXED, 1, 0);
+    /*public static RegistryEntry<Potion> SILENCE = registerPotion("silence", "silence",
+            ModEffects.SILENCE, 20 * 60 * 3, 0);
+    public static RegistryEntry<Potion> LONG_SILENCE = registerPotion("silence", "long_silence",
+            ModEffects.SILENCE, 20 * 60 * 8, 0);*/
+
+    public static RegistryEntry<Potion> SEDATIVE = registerPotion("sedative", "sedative",
+            ModEffects.SEDATIVE, 20 * 3, 0);
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod potions for " + TheAlchemistsTouch.MOD_ID);
 
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
             // changement de base, mais moins efficace que de farmer des nether wart
-            builder.registerPotionRecipe(Potions.WATER, Items.INK_SAC, Potions.AWKWARD);
+            builder.registerPotionRecipe(Potions.WATER, ModItems.SUSPICIOUS_STEW, Potions.AWKWARD);
 
             // potions accessible early
             builder.registerPotionRecipe(Potions.AWKWARD, Items.MAGMA_BLOCK, Potions.FIRE_RESISTANCE);
@@ -171,13 +177,15 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.CACTUS, ModPotion.THORNS);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.AMETHYST_SHARD, ModPotion.BRAIN_WASHING);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.SNOWBALL, ModPotion.FROST);
-            builder.registerPotionRecipe(Potions.AWKWARD, Items.NETHER_WART, ModPotion.ALCHEMIST);
-            builder.registerPotionRecipe(Potions.AWKWARD, Items.NETHER_WART, ModPotion.DEATH);
+            builder.registerPotionRecipe(Potions.AWKWARD, Items.COPPER_INGOT, ModPotion.ALCHEMIST);
+            builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.NETHER_WART, ModPotion.DEATH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.BEETROOT, ModPotion.SATURATION);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.REDSTONE_BLOCK, ModPotion.ACTIVATION);
             builder.registerPotionRecipe(Potions.STRONG_HEALING, Items.GOLDEN_APPLE, ModPotion.DOUBLEHEALTH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotion.RESURRECTION);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.GOLDEN_APPLE, ModPotion.INFINITY);
+            //builder.registerPotionRecipe(Potions.AWKWARD, Items.WHITE_WOOL, ModPotion.SILENCE);
+            builder.registerPotionRecipe(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotion.SEDATIVE);
 
             // version longue
             builder.registerPotionRecipe(ModPotion.LEVITATION, Items.REDSTONE, ModPotion.LONG_LEVITATION);
@@ -198,6 +206,7 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.FROST, Items.REDSTONE, ModPotion.LONG_FROST);
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.REDSTONE, ModPotion.LONG_SATURATION);
             builder.registerPotionRecipe(ModPotion.ACTIVATION, Items.REDSTONE, ModPotion.LONG_ACTIVATION);
+            //builder.registerPotionRecipe(ModPotion.SILENCE, Items.REDSTONE, ModPotion.LONG_SILENCE);
 
             // version strong
             builder.registerPotionRecipe(ModPotion.ALCOHOL, Items.GLOWSTONE, ModPotion.STRONG_ALCOHOL);

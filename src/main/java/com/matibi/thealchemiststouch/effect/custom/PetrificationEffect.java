@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.effect;
+package com.matibi.thealchemiststouch.effect.custom;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import net.minecraft.entity.Entity;
@@ -11,7 +11,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 
 public class PetrificationEffect extends StatusEffect {
-    protected PetrificationEffect() {
+    public PetrificationEffect() {
         super(StatusEffectCategory.HARMFUL, 0xA8A8A8);
 
         this.addAttributeModifier(

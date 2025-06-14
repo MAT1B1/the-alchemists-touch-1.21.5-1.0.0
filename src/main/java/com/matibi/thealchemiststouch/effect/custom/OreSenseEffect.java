@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.effect;
+package com.matibi.thealchemiststouch.effect.custom;
 
 import com.matibi.thealchemiststouch.util.ModTags;
 import net.minecraft.block.Block;

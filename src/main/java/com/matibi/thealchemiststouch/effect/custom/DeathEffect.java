@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.effect;
+package com.matibi.thealchemiststouch.effect.custom;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -8,7 +8,7 @@ import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
 
 public class DeathEffect extends StatusEffect {
-    protected DeathEffect() {
+    public DeathEffect() {
         super(StatusEffectCategory.HARMFUL, 0x000000);
     }
 

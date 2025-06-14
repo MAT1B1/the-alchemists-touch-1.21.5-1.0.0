@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.effect;
+package com.matibi.thealchemiststouch.effect.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;

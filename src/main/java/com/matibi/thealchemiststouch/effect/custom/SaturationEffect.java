@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.effect;
+package com.matibi.thealchemiststouch.effect.custom;
 
 import com.matibi.thealchemiststouch.mixin.HungerManagerAccessor;
 import net.minecraft.entity.LivingEntity;
@@ -8,7 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 
 public class SaturationEffect extends StatusEffect {
-    protected SaturationEffect() {
+    public SaturationEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0x5e370a);
     }
 

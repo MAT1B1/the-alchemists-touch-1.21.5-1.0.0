@@ -20,9 +20,9 @@ public abstract class BrewingStandBlockEntityMixin {
 
         ItemStack fuelStack = accessor.getInventory().get(4); // slot 4
 
-        if (fuelStack.getItem() == Items.COAL && accessor.getFuel() <= 0) {
+        if (fuelStack.getItem() == Items.LAVA_BUCKET && accessor.getFuel() <= 0) {
             fuelStack.decrement(1);
-            accessor.setFuel(20);
+            accessor.setFuel(1);
             world.updateListeners(pos, state, state, 3);
         }
     }

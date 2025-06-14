@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.effect;
+package com.matibi.thealchemiststouch.effect.custom;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import net.minecraft.entity.attribute.EntityAttributeModifier;

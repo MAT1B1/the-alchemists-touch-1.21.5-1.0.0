@@ -64,9 +64,9 @@ public abstract class LivingEntityMixin {
     }
 
     @Inject(method = "dropInventory", at = @At("HEAD"), cancellable = true)
-    private void preventDropIfAcidDeath(CallbackInfo ci) {
+    private void preventDropIfAcidOrPetrified(CallbackInfo ci) {
         LivingEntity entity = (LivingEntity)(Object)this;
-        if (entity.hasStatusEffect(ModEffects.ACID)) {
+        if (entity.hasStatusEffect(ModEffects.ACID) || entity.hasStatusEffect(ModEffects.PETRIFICATION)) {
             ci.cancel();
         }
     }

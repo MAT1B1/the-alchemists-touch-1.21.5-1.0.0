@@ -14,7 +14,7 @@ public class IgnitionEffect extends StatusEffect {
 
     @Override
     public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
-        if (!entity.isOnFire() && !entity.isInFluid())
+        if (!entity.isOnFire() && !entity.isInFluid() && !entity.hasStatusEffect(ModEffects.FROST))
             entity.setOnFireFor(4);
         return super.applyUpdateEffect(world, entity, amplifier);
     }

@@ -1,0 +1,8 @@
+– effet pierre texture petrification
+– lancement de boule de feu avec ignition
+– lancement de boule de neige avec frost
+– effet comme dans la poudreuse avec frost
+– rallonger les jambes avec long leg
+– effet instant marche sur fleches
+– zone de particule autour avec resonance
+– meilleur ingredient pour potions early

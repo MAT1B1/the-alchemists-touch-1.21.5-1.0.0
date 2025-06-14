@@ -13,7 +13,8 @@
 		"MerchantEntityMixin",
 		"PlayerInputMixin",
 		"MouseMixin",
-		"MobEntityMixin"
+		"MobEntityMixin",
+		"HungerManagerAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1

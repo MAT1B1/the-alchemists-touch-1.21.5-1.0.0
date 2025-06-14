@@ -79,6 +79,46 @@
   "item.minecraft.lingering_potion.effect.brain_washing" : "Lingering Potion of Brain Washing",
   "item.minecraft.tipped_arrow.effect.brain_washing" : "Arrow of Brain Washing",
 
+  "item.minecraft.potion.effect.frost" : "Potion of Frost",
+  "item.minecraft.splash_potion.effect.frost" : "Splash Potion of Frost",
+  "item.minecraft.lingering_potion.effect.frost" : "Lingering Potion of Frost",
+  "item.minecraft.tipped_arrow.effect.frost" : "Arrow of Frost",
+
+  "item.minecraft.potion.effect.alchemist" : "Potion of the Alchemist",
+  "item.minecraft.splash_potion.effect.alchemist" : "Splash Potion of the Alchemist",
+  "item.minecraft.lingering_potion.effect.alchemist" : "Lingering Potion of the Alchemist",
+  "item.minecraft.tipped_arrow.effect.alchemist" : "Arrow of the Alchemist",
+
+  "item.minecraft.potion.effect.death" : "Potion of Death",
+  "item.minecraft.splash_potion.effect.death" : "Splash Potion of Death",
+  "item.minecraft.lingering_potion.effect.death" : "Lingering Potion of Death",
+  "item.minecraft.tipped_arrow.effect.death" : "Arrow of Death",
+
+  "item.minecraft.potion.effect.saturation" : "Potion of Saturation",
+  "item.minecraft.splash_potion.effect.saturation" : "Splash Potion of Saturation",
+  "item.minecraft.lingering_potion.effect.saturation" : "Lingering Potion of Saturation",
+  "item.minecraft.tipped_arrow.effect.saturation" : "Arrow of Saturation",
+
+  "item.minecraft.potion.effect.activation" : "Potion of Activation",
+  "item.minecraft.splash_potion.effect.activation" : "Splash Potion of Activation",
+  "item.minecraft.lingering_potion.effect.activation" : "Lingering Potion of Activation",
+  "item.minecraft.tipped_arrow.effect.activation" : "Arrow of Activation",
+
+  "item.minecraft.potion.effect.doublehealth" : "Potion of Double Health",
+  "item.minecraft.splash_potion.effect.doublehealth" : "Splash Potion of Double Health",
+  "item.minecraft.lingering_potion.effect.doublehealth" : "Lingering Potion of Double Health",
+  "item.minecraft.tipped_arrow.effect.doublehealth" : "Arrow of Double Health",
+
+  "item.minecraft.potion.effect.resurrection" : "Potion of Resurrection",
+  "item.minecraft.splash_potion.effect.resurrection" : "Splash Potion of Resurrection",
+  "item.minecraft.lingering_potion.effect.resurrection" : "Lingering Potion of Resurrection",
+  "item.minecraft.tipped_arrow.effect.resurrection" : "Arrow of Resurrection",
+
+  "item.minecraft.potion.effect.infinity" : "Potion of Infinity",
+  "item.minecraft.splash_potion.effect.infinity" : "Splash Potion of Infinity",
+  "item.minecraft.lingering_potion.effect.infinity" : "Lingering Potion of Infinity",
+  "item.minecraft.tipped_arrow.effect.infinity" : "Arrow of Infinity",
+
   "effect.the-alchemists-touch.long_leg" : "Long legs",
   "effect.the-alchemists-touch.liquid_walker" : "Liquid Walker",
   "effect.the-alchemists-touch.ore_sense" : "Ore Sense",
@@ -90,5 +130,13 @@
   "effect.the-alchemists-touch.ignition" : "Ignition",
   "effect.the-alchemists-touch.teleportation" : "Teleportation",
   "effect.the-alchemists-touch.thorns" : "Thorns",
-  "effect.the-alchemists-touch.brain_washing" : "Brain Washing"
+  "effect.the-alchemists-touch.brain_washing" : "Brain Washing",
+  "effect.the-alchemists-touch.frost" : "Frost",
+  "effect.the-alchemists-touch.alchemist" : "Alchemist",
+  "effect.the-alchemists-touch.death" : "Death",
+  "effect.the-alchemists-touch.saturation" : "Saturation",
+  "effect.the-alchemists-touch.activation" : "Activation",
+  "effect.the-alchemists-touch.doublehealth" : "Double Health",
+  "effect.the-alchemists-touch.resurrection" : "Resurrection",
+  "effect.the-alchemists-touch.infinity" : "Infinity"
 }

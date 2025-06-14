@@ -45,6 +45,33 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> BRAIN_WASHING = registerStatusEffects("brain_washing",
             new BrainwashingEffect());
 
+    public static final RegistryEntry<StatusEffect> FROST = registerStatusEffects("frost",
+            new FrostEffect());
+
+    public static final RegistryEntry<StatusEffect> ALCHEMIST = registerStatusEffects("alchemist",
+            new AlchemistEffect());
+
+    public static final RegistryEntry<StatusEffect> DEATH = registerStatusEffects("death",
+            new DeathEffect());
+
+    public static final RegistryEntry<StatusEffect> SATURATION = registerStatusEffects("saturation",
+            new SaturationEffect());
+
+    public static final RegistryEntry<StatusEffect> ACTIVATION = registerStatusEffects("activation",
+            new ActivationEffect());
+
+    public static final RegistryEntry<StatusEffect> DOUBLEHEALTH = registerStatusEffects("doublehealth",
+            new DoubleHealthEffect());
+
+    public static final RegistryEntry<StatusEffect> INFINITY = registerStatusEffects("infinity",
+            new InfinityEffect());
+
+    public static final RegistryEntry<StatusEffect> RESURRECTION = registerStatusEffects("resurrection",
+            new ResurrectionEffect());
+
+    public static final RegistryEntry<StatusEffect> MIXED = registerStatusEffects("mixed",
+            new MixedEffect());
+
     private static RegistryEntry<StatusEffect> registerStatusEffects(String name, StatusEffect effect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(TheAlchemistsTouch.MOD_ID, name), effect);
     }

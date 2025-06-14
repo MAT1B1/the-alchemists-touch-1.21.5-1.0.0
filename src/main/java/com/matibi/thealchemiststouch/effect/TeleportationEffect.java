@@ -10,8 +10,6 @@ import net.minecraft.world.Heightmap;
 import org.jetbrains.annotations.Nullable;
 
 public class TeleportationEffect extends StatusEffect {
-    // TODO : working tipped arrow
-
     public TeleportationEffect() {
         super(StatusEffectCategory.NEUTRAL, 0x8833cc);
     }

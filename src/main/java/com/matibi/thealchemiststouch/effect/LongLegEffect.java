@@ -8,8 +8,6 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 
 public class LongLegEffect extends StatusEffect {
-    // TODO : actually change the player to lengthen the legs too
-
     public LongLegEffect() {
         super(StatusEffectCategory.NEUTRAL, 0x89D964);
 

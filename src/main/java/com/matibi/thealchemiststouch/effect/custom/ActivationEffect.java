@@ -27,11 +27,6 @@ public class ActivationEffect extends StatusEffect {
             BlockState state = world.getBlockState(pos);
             Block block = state.getBlock();
 
-            // 🚪 Portes
-            if (block instanceof DoorBlock && state.contains(Properties.OPEN) && !state.get(Properties.OPEN)) {
-
-            }
-
             // 🧨 TNT
             else if (block instanceof TntBlock) {
                 TntBlock.primeTnt(world, pos);

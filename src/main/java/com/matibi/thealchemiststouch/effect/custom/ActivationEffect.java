@@ -28,7 +28,7 @@ public class ActivationEffect extends StatusEffect {
             Block block = state.getBlock();
 
             // 🧨 TNT
-            else if (block instanceof TntBlock) {
+            if (block instanceof TntBlock) {
                 TntBlock.primeTnt(world, pos);
                 world.removeBlock(pos, false);
             }

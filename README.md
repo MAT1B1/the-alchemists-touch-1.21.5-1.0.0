@@ -18,10 +18,10 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 Makes the player float upward for a short duration.
 
 ### 💡 Glowing
-Applies the glowing effect so entities are visible through walls.
+Applies the glowing effect.
 
 ### 🍷 Alcohol
-Applies nausea; roleplay effect or can be combined with other potions.
+Applies nausea.
 
 ### 🌑 Darkness
 Darkens the player’s vision, reducing visibility.
@@ -36,13 +36,13 @@ Lets the player walk over water and lava.
 Highlights nearby ores through particle effects.
 
 ### 🔊 Resonance
-Creates a visible aura showing the potion's area of effect.
+Applies the effects of the entity to nearby entities.
 
 ### ♻️ Reactivation
 Extends the duration of all active effects when drinking another potion.
 
 ### 💧 Purification
-Removes negative effects and extinguishes fire.
+Removes negative effects.
 
 ### 🗿 Petrification
 Freezes the player in place but makes them invulnerable.
@@ -51,40 +51,41 @@ Freezes the player in place but makes them invulnerable.
 Applies damage to blocks or entities over time.
 
 ### 🔥 Ignition
-Makes each melee attack launch a fireball.
+The entity catches fire.
 
 ### 🌀 Teleportation
 Instantly teleports the player randomly nearby.
 
 ### 🌵 Thorns
-Reflects all active effects onto nearby entities.
+Acts like the enchantement.
 
 ### 🧠 Brain Washing
-Confuses movement, flips vision, and turns hostile mobs against each other.
+- Confuses movement, flips vision, and turns hostile mobs against each other.
+- When use on villager, price is reduced.
 
 ### ❄️ Frost
-Applies Slowness III and prevents jumping.
+Slow the entity.
 
 ### 🧙 Alchemist
-Allows transforming coal into gold with attacks or special interactions.
+Allows transforming coal hold int the second hand into gold.
 
 ### ☠️ Death
-Triggers immediate death unless countered by Resurrection.
+Triggers immediate death (only work for 50% one bosses).
 
 ### 🍖 Saturation
 Fills hunger bar and keeps it full longer.
 
 ### ⚡ Activation
-Boosts all potion effects the player already has.
+The entity activates every blocks like a redstone block.
 
 ### ❤️‍🔥 Double Health
-Doubles maximum health for a short time.
+Doubles maximum health (Like absrobtion).
 
 ### ✝️ Resurrection
 Acts like a totem of undying while the effect is active.
 
 ### ∞ Infinity
-Turns current potion effects into infinite-duration ones.
+Turns current potion effects into infinite-duration ones, but there is a catch, it don't work on all potion effect and you take 2 heart damage for each transformed effect.
 
 </details>
 

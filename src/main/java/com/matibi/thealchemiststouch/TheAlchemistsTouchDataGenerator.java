@@ -1,9 +1,6 @@
 package com.matibi.thealchemiststouch;
 
-import com.matibi.thealchemiststouch.datagen.ModBlockTagProvider;
-import com.matibi.thealchemiststouch.datagen.ModItemTagProvider;
-import com.matibi.thealchemiststouch.datagen.ModModelProvider;
-import com.matibi.thealchemiststouch.datagen.ModRecipeProvider;
+import com.matibi.thealchemiststouch.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -15,5 +12,6 @@ public class TheAlchemistsTouchDataGenerator implements DataGeneratorEntrypoint 
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModLootTableGenerator::new);
 	}
 }

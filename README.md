@@ -16,7 +16,7 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 
 <details>
 <summary><strong>New item crafting recipe:</strong></summary>
-<!-- Add image or table here if needed -->
+![Custom Crafting Recipe](https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/tree/master/src/main/resources/assets/the-alchemists-touch/image/crafting.png)
 </details>
 
 ## Potion List

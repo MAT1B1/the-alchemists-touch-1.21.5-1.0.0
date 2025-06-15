@@ -249,5 +249,4 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 
 ## Having Issues With the Mod?
 
-- Instagram: [@mathias._.bgl](https://www.instagram.com/mathias._.bgl)  
 - Email: mathias.bagal@gmail.com

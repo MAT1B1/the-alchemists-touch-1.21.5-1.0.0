@@ -3,16 +3,12 @@ package com.matibi.thealchemiststouch.item;
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.component.type.UseRemainderComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -45,10 +41,9 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"poisonous_beetroot")))
     ));
 
-    public static final Item SUSPICIOUS_STEW = register("suspicious_stew", new Item(new Item.Settings()
+    public static final Item ALCHEMIST_CORE = register("alchemist_core", new Item(new Item.Settings()
             .food(POISON_FOOD_COMPONENT, HARD_POISON_FOOD_CONSUMABLE_COMPONENT)
-            .component(DataComponentTypes.USE_REMAINDER, new UseRemainderComponent(new ItemStack(Items.BOWL)))
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"suspicious_stew")))
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"alchemist_core")))
     ));
 
     private static Item register(String id, Item item) {
@@ -58,7 +53,7 @@ public class ModItems {
     private static void customFood(FabricItemGroupEntries entries) {
         entries.add(POISONOUS_CARROT);
         entries.add(POISONOUS_BEETROOT);
-        entries.add(SUSPICIOUS_STEW);
+        entries.add(ALCHEMIST_CORE);
     }
 
     public static void register() {

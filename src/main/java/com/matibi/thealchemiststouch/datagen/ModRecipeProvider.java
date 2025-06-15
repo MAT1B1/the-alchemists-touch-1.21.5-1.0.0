@@ -22,7 +22,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeGenerator(wrapperLookup, recipeExporter) {
             @Override
             public void generate() {
-                createShapeless(RecipeCategory.BREWING, ModItems.SUSPICIOUS_STEW, 8)
+                createShapeless(RecipeCategory.BREWING, ModItems.ALCHEMIST_CORE, 8)
                         .input(Items.POISONOUS_POTATO)
                         .input(ModItems.POISONOUS_CARROT)
                         .input(ModItems.POISONOUS_BEETROOT)
@@ -30,8 +30,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(Items.RED_MUSHROOM)
                         .input(Items.FERMENTED_SPIDER_EYE)
                         .input(Items.BONE_MEAL)
-                        .input(Items.RAW_COPPER)
-                        .input(Items.BOWL, 8)
+                        .input(Items.ROTTEN_FLESH)
+                        .input(Items.RESIN_CLUMP)
                         .criterion(hasItem(ModItems.POISONOUS_BEETROOT), conditionsFromItem(ModItems.POISONOUS_BEETROOT))
                         .criterion(hasItem(ModItems.POISONOUS_CARROT), conditionsFromItem(ModItems.POISONOUS_CARROT))
                         .criterion(hasItem(Items.POISONOUS_POTATO), conditionsFromItem(Items.POISONOUS_POTATO))

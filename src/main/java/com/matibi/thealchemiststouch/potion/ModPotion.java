@@ -152,7 +152,7 @@ public class ModPotion {
 
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
             // changement de base, mais moins efficace que de farmer des nether wart
-            builder.registerPotionRecipe(Potions.WATER, ModItems.SUSPICIOUS_STEW, Potions.AWKWARD);
+            builder.registerPotionRecipe(Potions.WATER, ModItems.ALCHEMIST_CORE, Potions.AWKWARD);
 
             // potions accessible early
             builder.registerPotionRecipe(Potions.AWKWARD, Items.MAGMA_BLOCK, Potions.FIRE_RESISTANCE);

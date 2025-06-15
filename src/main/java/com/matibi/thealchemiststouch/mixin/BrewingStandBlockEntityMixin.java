@@ -18,11 +18,11 @@ public abstract class BrewingStandBlockEntityMixin {
     private static void injectCustomFuel(World world, BlockPos pos, BlockState state, BrewingStandBlockEntity blockEntity, CallbackInfo ci) {
         BrewingStandAccessor accessor = (BrewingStandAccessor) blockEntity;
 
-        ItemStack fuelStack = accessor.getInventory().get(4); // slot 4
+        ItemStack fuelStack = accessor.getInventory().get(4);
 
-        if (fuelStack.getItem() == Items.LAVA_BUCKET && accessor.getFuel() <= 0) {
-            fuelStack.decrement(1);
-            accessor.setFuel(1);
+        if (accessor.getFuel() < 20 && fuelStack.getItem() == Items.LAVA_BUCKET) {
+            accessor.setFuel(accessor.getFuel() + 1);
+            accessor.getInventory().set(4, new ItemStack(Items.BUCKET));
             world.updateListeners(pos, state, state, 3);
         }
     }

@@ -21,6 +21,8 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 </details>
 
 ## Potion List
+<details>
+<summary>Clik to extend</summary>
 
 <details>
 <summary><strong>🪶 Levitation</strong></summary>  
@@ -234,6 +236,7 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 <sub><strong>Base:</strong> Resurrection Potion<br><strong>Ingredient:</strong> Golden Apple</sub>  
   <br>
   <br>
+</details>
 </details>
 
 ## Planned Features

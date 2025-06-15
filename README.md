@@ -11,16 +11,19 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 
 ## Early-Game Potions
 
-- Lava buckets can be used as fuel in a brewing stand, but they are much less efficient than blaze powder  
-- A new craftable item can be used as a Nether wart replacement, though it's harder to obtain  
+- <strong>Two new toxic crop drops</strong>: Poisonous Carrot and Poisonous Beetroot, rare variants of their edible counterparts.
+- <strong>Lava buckets can now fuel brewing stands</strong>, but provide only minimal fuel compared to blaze powder.
+- The <strong>Alchemist Core</strong>, a powerful craftable item, acts as a replacement for Nether Wart in potion brewing — though it’s significantly harder to obtain.
 
 <details>
-<summary><strong>New item crafting recipe:</strong></summary>
-![Custom Crafting Recipe](https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/tree/master/src/main/resources/assets/the-alchemists-touch/image/crafting.png)
+<summary><strong>Alchemist Core recipe (shapless):</strong></summary>
+<img src="https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/raw/master/src/main/resources/assets/the-alchemists-touch/image/recipe.png" alt="Alchemist Core Crafting Recipe" style="width:256px; image-rendering: pixelated;">
 </details>
 
 ## Potion List
-
+<details>
+<summary>Clik to expand</summary>
+<br>
 <details>
 <summary><strong>🪶 Levitation</strong></summary>  
 Makes the player float upward for a short duration. 
@@ -233,6 +236,7 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 <sub><strong>Base:</strong> Resurrection Potion<br><strong>Ingredient:</strong> Golden Apple</sub>  
   <br>
   <br>
+</details>
 </details>
 
 ## Planned Features

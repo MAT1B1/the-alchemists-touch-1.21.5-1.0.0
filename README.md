@@ -22,8 +22,8 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 
 ## Potion List
 <details>
-<summary>Clik to extend</summary>
-
+<summary>Clik to expand</summary>
+<br>
 <details>
 <summary><strong>🪶 Levitation</strong></summary>  
 Makes the player float upward for a short duration. 

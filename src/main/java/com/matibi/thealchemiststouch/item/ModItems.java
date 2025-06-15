@@ -3,18 +3,24 @@ package com.matibi.thealchemiststouch.item;
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
+
+import java.util.Map;
 
 public class ModItems {
     public static final ConsumableComponent POISON_FOOD_CONSUMABLE_COMPONENT = ConsumableComponent.builder()
@@ -42,9 +48,15 @@ public class ModItems {
     ));
 
     public static final Item ALCHEMIST_CORE = register("alchemist_core", new Item(new Item.Settings()
-            .food(POISON_FOOD_COMPONENT, HARD_POISON_FOOD_CONSUMABLE_COMPONENT)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"alchemist_core")))
-    ));
+            .rarity(Rarity.UNCOMMON)
+            .component(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT)
+    ) {
+        @Override
+        public boolean hasGlint(ItemStack stack) {
+            return true;
+        }
+    });
 
     private static Item register(String id, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID, id), item);

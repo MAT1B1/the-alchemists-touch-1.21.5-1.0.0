@@ -14,6 +14,13 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 - <strong>Two new toxic crop drops</strong>: Poisonous Carrot and Poisonous Beetroot, rare variants of their edible counterparts.
 - <strong>Lava buckets can now fuel brewing stands</strong>, but provide only minimal fuel compared to blaze powder.
 - The <strong>Alchemist Core</strong>, a powerful craftable item, acts as a replacement for Nether Wart in potion brewing — though it’s significantly harder to obtain.
+<details> <summary><strong></strong>Potions with changed ingredients</strong></summary>
+🔥 <strong>Fire Resistance</strong> – Now can be brewed using <em>Magma Block</em> and Magma Cream
+ <br>
+🍎 <strong>Regeneration</strong> – Now can be brewed using <em>Golden Apple</em> and Ghast Tear
+ <br>
+💪 <strong>Strength</strong> – Now can be brewed using <em>Firework Star</em> and Blaze Powder
+</details>
 
 <details>
 <summary><strong>Alchemist Core recipe (shapless):</strong></summary>

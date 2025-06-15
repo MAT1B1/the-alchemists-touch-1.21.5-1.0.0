@@ -20,15 +20,9 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
-import java.util.Map;
-
 public class ModItems {
     public static final ConsumableComponent POISON_FOOD_CONSUMABLE_COMPONENT = ConsumableComponent.builder()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.POISON, 6 * 20, 1), 0.6f))
-            .build();
-
-    public static final ConsumableComponent HARD_POISON_FOOD_CONSUMABLE_COMPONENT = ConsumableComponent.builder()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.POISON, 30 * 20, 2), 1.0f))
             .build();
 
     public static final FoodComponent POISON_FOOD_COMPONENT = new FoodComponent.Builder()

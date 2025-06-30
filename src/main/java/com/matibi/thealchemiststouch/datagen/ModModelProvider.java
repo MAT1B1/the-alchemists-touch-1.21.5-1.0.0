@@ -27,9 +27,5 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ALCHEMIST_CORE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.RUNE, Models.GENERATED);
-        Model model = new Model(Optional.of(Identifier.of(TheAlchemistsTouch.MOD_ID, "item/rune")), Optional.empty());
-        itemModelGenerator.register(ModItems.ACID_RUNE, model);
-        itemModelGenerator.register(ModItems.PETRIFICATION_RUNE, model);
-        itemModelGenerator.register(ModItems.ALCHEMIST_RUNE, model);
     }
 }

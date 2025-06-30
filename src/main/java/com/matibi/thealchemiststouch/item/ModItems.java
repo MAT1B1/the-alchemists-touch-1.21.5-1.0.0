@@ -2,12 +2,12 @@ package com.matibi.thealchemiststouch.item;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
+import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.ConsumableComponent;
-import net.minecraft.component.type.FoodComponent;
-import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.component.type.*;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
@@ -18,8 +18,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class ModItems {
     public static final ConsumableComponent POISON_FOOD_CONSUMABLE_COMPONENT = ConsumableComponent.builder()
@@ -54,34 +60,10 @@ public class ModItems {
     });
 
     // Runes
-
-    public static final Item ACID_RUNE = register("acid_rune",
-            new AlchemicalRuneItem(new Item.Settings()
-                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"acid_rune")))
-                    .maxCount(16),
-                    new StatusEffectInstance(ModEffects.ACID, 1, 1)
-            ));
-
-    public static final Item PETRIFICATION_RUNE = register("petrification_rune",
-            new AlchemicalRuneItem(new Item.Settings()
-                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"petrification_rune")))
-                    .maxCount(16),
-                    new StatusEffectInstance(ModEffects.PETRIFICATION, 1, 0)
-            ));
-
-    public static final Item ALCHEMIST_RUNE = register("alchemist_rune",
-            new AlchemicalRuneItem(new Item.Settings()
-                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"alchemist_rune")))
-                    .maxCount(16),
-                    new StatusEffectInstance(ModEffects.ALCHEMIST, 1, 0)
-            ));
-
-    // Pour la rune de base, pas d'effet
     public static final Item RUNE = register("rune",
             new AlchemicalRuneItem(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"rune")))
-                    .maxCount(16),
-                    null
+                    .maxCount(16)
             ));
 
     private static Item register(String id, Item item) {
@@ -94,11 +76,46 @@ public class ModItems {
     }
 
     private static void customItem(FabricItemGroupEntries entries) {
-        entries.add(RUNE);
-        entries.add(ACID_RUNE);
-        entries.add(PETRIFICATION_RUNE);
-        entries.add(ALCHEMIST_RUNE);
-        entries.add(ALCHEMIST_CORE);
+        entries.add(ModItems.ALCHEMIST_CORE);
+        entries.add(createBaseRune());
+        entries.add(createRunes(ModEffects.ACID, 0));
+        entries.add(createRunes(ModEffects.ACID, 1));
+        entries.add(createRunes(ModEffects.ALCHEMIST, 0));
+        entries.add(createRunes(ModEffects.PETRIFICATION, 0));
+        entries.add(createRunes(ModEffects.PETRIFICATION, 1));
+    }
+
+    public static ItemStack createBaseRune() {
+        ItemStack stack = new ItemStack(ModItems.RUNE);
+        stack.set(DataComponentTypes.POTION_CONTENTS, PotionContentsComponent.DEFAULT);
+        String translationKey = "item.the-alchemists-touch.rune.effect.default";
+        stack.set(DataComponentTypes.CUSTOM_NAME,
+                Text.empty().append(Text.translatable(translationKey)).styled(style ->
+                        style.withItalic(false)));
+        return stack;
+    }
+
+    public static ItemStack createRunes(RegistryEntry<StatusEffect> entry, int amplifier) {
+        StatusEffect effect = entry.value();
+        if (effect instanceof TerrainApplicableEffect &&
+                Objects.requireNonNull(Registries.STATUS_EFFECT.getId(effect)).getNamespace().equals(TheAlchemistsTouch.MOD_ID)) {
+            ItemStack rune = new ItemStack(ModItems.RUNE);
+
+            rune.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(
+                    Optional.empty(),
+                    Optional.empty(),
+                    List.of(new StatusEffectInstance(entry, 1, amplifier)),
+                    Optional.empty()
+            ));
+            String effectId = Objects.requireNonNull(Registries.STATUS_EFFECT.getId(effect)).getPath();
+            String translationKey = "item.the-alchemists-touch.rune.effect." + effectId;
+            rune.set(DataComponentTypes.CUSTOM_NAME,
+                    Text.empty().append(Text.translatable(translationKey)).styled(style ->
+                            style.withItalic(false)));
+
+            return rune;
+        }
+        return ItemStack.EMPTY;
     }
 
     public static void register() {

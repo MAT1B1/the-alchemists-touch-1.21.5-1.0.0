@@ -2,6 +2,8 @@ package com.matibi.thealchemiststouch.util;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import net.minecraft.block.Block;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;

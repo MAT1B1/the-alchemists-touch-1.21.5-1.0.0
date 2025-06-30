@@ -1,5 +1,6 @@
 package com.matibi.thealchemiststouch.effect.custom;
 
+import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;

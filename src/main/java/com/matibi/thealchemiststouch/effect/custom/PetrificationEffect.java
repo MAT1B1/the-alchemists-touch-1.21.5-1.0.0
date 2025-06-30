@@ -9,7 +9,9 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 
@@ -53,8 +55,13 @@ public class PetrificationEffect extends StatusEffect implements TerrainApplicab
     public void applyOnBlock(ServerWorld world, BlockPos block, int duration, int amplifier) {
         if (amplifier == 0 && !world.getBlockState(block).isOf(Blocks.COBBLESTONE))
             world.setBlockState(block, Blocks.COBBLESTONE.getDefaultState());
-
-        if (!world.getBlockState(block).isOf(Blocks.BEDROCK))
+        else if (amplifier > 0)
             world.setBlockState(block, Blocks.BEDROCK.getDefaultState());
+
+    }
+
+    @Override
+    public boolean isBlockApplicable(ServerWorld world, BlockPos block) {
+        return !world.getBlockState(block).isOf(Blocks.BEDROCK);
     }
 }

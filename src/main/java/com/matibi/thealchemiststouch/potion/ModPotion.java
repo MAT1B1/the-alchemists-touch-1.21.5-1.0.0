@@ -4,12 +4,8 @@ import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.item.ModItems;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
@@ -223,10 +219,7 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.GLOWSTONE, ModPotion.STRONG_SATURATION);
             builder.registerPotionRecipe(ModPotion.DOUBLEHEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLEHEALTH);
 
-            // Runes
-            registerRune(ModItems.ACID_RUNE, ACID);
-            registerRune(ModItems.ALCHEMIST_RUNE, ALCHEMIST);
-            registerRune(ModItems.PETRIFICATION_RUNE, PETRIFICATION);
+            builder.registerPotionType(ModItems.RUNE);
         });
     }
 
@@ -237,13 +230,5 @@ public class ModPotion {
                                                         int amplifier) {
         return Registry.registerReference(Registries.POTION, Identifier.of(TheAlchemistsTouch.MOD_ID, id),
                 new Potion(name, new StatusEffectInstance(effect, duration, amplifier)));
-    }
-
-    public static void registerRune(Item item, RegistryEntry<Potion> potion) {
-        ItemStack stack = item.getDefaultStack();
-        stack.set(
-                DataComponentTypes.POTION_CONTENTS,
-                new PotionContentsComponent(potion)
-        );
     }
 }

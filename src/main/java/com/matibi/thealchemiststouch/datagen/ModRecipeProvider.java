@@ -37,6 +37,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.POISONOUS_POTATO), conditionsFromItem(Items.POISONOUS_POTATO))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.BREWING, ModItems.RUNE, 3)
+                        .pattern("#S#")
+                        .pattern("SAS")
+                        .pattern("#S#")
+                        .input('A', ModItems.ALCHEMIST_CORE)
+                        .input('S', Items.STONE)
+                        .criterion(hasItem(ModItems.ALCHEMIST_CORE), conditionsFromItem(ModItems.ALCHEMIST_CORE))
+                        .offerTo(exporter);
+
             }
         };
     }

@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.effect.custom;
 
 import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -53,6 +54,14 @@ public class AlchemistEffect extends StatusEffect implements TerrainApplicableEf
             world.setBlockState(block, net.minecraft.block.Blocks.GOLD_ORE.getDefaultState());
         else if (blockType == net.minecraft.block.Blocks.DEEPSLATE_COAL_ORE)
             world.setBlockState(block, net.minecraft.block.Blocks.DEEPSLATE_GOLD_ORE.getDefaultState());
+    }
+
+    @Override
+    public boolean isBlockApplicable(ServerWorld world, BlockPos block) {
+        BlockState state = world.getBlockState(block);
+        return state.getBlock() == net.minecraft.block.Blocks.COAL_BLOCK
+                || state.getBlock() == net.minecraft.block.Blocks.COAL_ORE
+                || state.getBlock() == net.minecraft.block.Blocks.DEEPSLATE_COAL_ORE;
     }
 }
 

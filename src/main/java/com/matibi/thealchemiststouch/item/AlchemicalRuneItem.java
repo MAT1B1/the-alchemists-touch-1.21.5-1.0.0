@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.PotionItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.potion.Potion;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -16,21 +17,16 @@ import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
 
-import java.util.List;
-import java.util.Optional;
-
 public class AlchemicalRuneItem extends PotionItem {
-    private final StatusEffectInstance effect;
 
-    public AlchemicalRuneItem(Settings settings, StatusEffectInstance effect) {
+    public AlchemicalRuneItem(Settings settings) {
         super(settings);
-        this.effect = effect;
     }
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
-            user.sendMessage(Text.literal("Cette potion ne peut être utilisée que sur un bloc."), true);
+            user.sendMessage(Text.translatable("item.the-alchemists-touch.rune.block_only"), true);
         }
         return ActionResult.FAIL;
     }
@@ -40,32 +36,26 @@ public class AlchemicalRuneItem extends PotionItem {
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos();
         ItemStack stack = context.getStack();
+        PlayerEntity user = context.getPlayer();
 
         if (!(world instanceof ServerWorld serverWorld)) return ActionResult.SUCCESS;
 
-        StatusEffect effectType = effect.getEffectType().value();
-        if (effectType instanceof TerrainApplicableEffect terrainEffect)
-            terrainEffect.applyOnBlock(serverWorld, pos, effect.getDuration(), effect.getAmplifier());
+        PotionContentsComponent contents = stack.get(DataComponentTypes.POTION_CONTENTS);
+        if (contents == null || !contents.hasEffects())
+            return ActionResult.FAIL;
 
+
+        for (StatusEffectInstance effect : contents.getEffects()) {
+            StatusEffect effectType = effect.getEffectType().value();
+            if (effectType instanceof TerrainApplicableEffect terrainEffect) {
+                if (!terrainEffect.isBlockApplicable(serverWorld, pos) && user != null) {
+                    user.sendMessage(Text.translatable("item.the-alchemists-touch.rune.block_not_good"), true);
+                } else
+                    terrainEffect.applyOnBlock(serverWorld, pos, effect.getDuration(), effect.getAmplifier());
+            }
+        }
         stack.decrement(1);
         return ActionResult.SUCCESS;
-    }
-
-    @Override
-    public ItemStack getDefaultStack() {
-        ItemStack stack = new ItemStack(this);
-
-        if (effect != null) {
-            PotionContentsComponent contents = new PotionContentsComponent(
-                    Optional.empty(),
-                    Optional.empty(),
-                    List.of(effect),
-                    Optional.empty()
-            );
-            stack.set(DataComponentTypes.POTION_CONTENTS, contents);
-        }
-
-        return stack;
     }
 
 }

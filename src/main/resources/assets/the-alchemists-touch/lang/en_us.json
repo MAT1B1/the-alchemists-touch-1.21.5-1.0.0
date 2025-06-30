@@ -59,12 +59,14 @@
   "item.minecraft.splash_potion.effect.petrification" : "Splash Potion of Petrification",
   "item.minecraft.lingering_potion.effect.petrification" : "Lingering Potion of Petrification",
   "item.minecraft.tipped_arrow.effect.petrification" : "Arrow of Petrification",
+  "item.the-alchemists-touch.rune.effect.petrification": "Rune of Petrification",
   "effect.the-alchemists-touch.petrification" : "Petrification",
 
   "item.minecraft.potion.effect.acid" : "Potion of Acidity",
   "item.minecraft.splash_potion.effect.acid" : "Splash Potion of Acidity",
   "item.minecraft.lingering_potion.effect.acid" : "Lingering Potion of Acidity",
   "item.minecraft.tipped_arrow.effect.acid" : "Arrow of Acid",
+  "item.the-alchemists-touch.rune.effect.acid": "Rune of Acidity",
   "effect.the-alchemists-touch.acid" : "Acidity",
 
   "item.minecraft.potion.effect.ignition" : "Potion of Ignition",
@@ -101,6 +103,7 @@
   "item.minecraft.splash_potion.effect.alchemist" : "Splash Potion of the Alchemist",
   "item.minecraft.lingering_potion.effect.alchemist" : "Lingering Potion of the Alchemist",
   "item.minecraft.tipped_arrow.effect.alchemist" : "Arrow of the Alchemist",
+  "item.the-alchemists-touch.rune.effect.alchemist": "Rune of Alchemist",
   "effect.the-alchemists-touch.alchemist" : "Alchemist",
 
   "item.minecraft.potion.effect.death" : "Potion of Death",
@@ -147,5 +150,9 @@
 
   "item.the-alchemists-touch.poisonous_carrot" : "Poisonous Carrot",
   "item.the-alchemists-touch.poisonous_beetroot" : "Poisonous Beetroot",
-  "item.the-alchemists-touch.alchemist_core" : "Alchemist Core"
+  "item.the-alchemists-touch.alchemist_core" : "Alchemist Core",
+  "item.the-alchemists-touch.rune.effect.default": "Rune",
+
+  "item.the-alchemists-touch.rune.block_only": "Runes can only be used on blocks",
+  "item.the-alchemists-touch.rune.block_not_good": "The block is not compatible"
 }

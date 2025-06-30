@@ -1,5 +1,6 @@
 package com.matibi.thealchemiststouch.effect.custom;
 
+import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -9,9 +10,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
-public class AlchemistEffect extends StatusEffect{
+public class AlchemistEffect extends StatusEffect implements TerrainApplicableEffect {
     public AlchemistEffect() {
             super(StatusEffectCategory.BENEFICIAL, 0xd1c70d);
     }
@@ -38,6 +40,19 @@ public class AlchemistEffect extends StatusEffect{
             player.setStackInHand(Hand.OFF_HAND, new ItemStack(Items.DEEPSLATE_GOLD_ORE, count));
 
         super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
+    }
+
+    @Override
+    public void applyOnBlock(ServerWorld world, BlockPos block, int duration, int amplifier) {
+        var state = world.getBlockState(block);
+        var blockType = state.getBlock();
+
+        if (blockType == net.minecraft.block.Blocks.COAL_BLOCK)
+            world.setBlockState(block, net.minecraft.block.Blocks.GOLD_BLOCK.getDefaultState());
+        else if (blockType == net.minecraft.block.Blocks.COAL_ORE)
+            world.setBlockState(block, net.minecraft.block.Blocks.GOLD_ORE.getDefaultState());
+        else if (blockType == net.minecraft.block.Blocks.DEEPSLATE_COAL_ORE)
+            world.setBlockState(block, net.minecraft.block.Blocks.DEEPSLATE_GOLD_ORE.getDefaultState());
     }
 }
 

@@ -5,4 +5,4 @@
 – rallonger les jambes avec long leg
 – effet instant marche sur fleches
 – zone de particule autour avec resonance
-– meilleur ingredient pour potions early
+- faire en sorte que teleportation teleporte proche et pas que sur la surface

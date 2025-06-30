@@ -1,6 +1,8 @@
 package com.matibi.thealchemiststouch.effect.custom;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
+import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -9,8 +11,9 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 
-public class PetrificationEffect extends StatusEffect {
+public class PetrificationEffect extends StatusEffect implements TerrainApplicableEffect {
     public PetrificationEffect() {
         super(StatusEffectCategory.HARMFUL, 0xA8A8A8);
 
@@ -44,5 +47,14 @@ public class PetrificationEffect extends StatusEffect {
     public void onEntityRemoval(ServerWorld world, LivingEntity entity, int amplifier, Entity.RemovalReason reason) {
         entity.setInvulnerable(false);
         super.onEntityRemoval(world, entity, amplifier, reason);
+    }
+
+    @Override
+    public void applyOnBlock(ServerWorld world, BlockPos block, int duration, int amplifier) {
+        if (amplifier == 0 && !world.getBlockState(block).isOf(Blocks.COBBLESTONE))
+            world.setBlockState(block, Blocks.COBBLESTONE.getDefaultState());
+
+        if (!world.getBlockState(block).isOf(Blocks.BEDROCK))
+            world.setBlockState(block, Blocks.BEDROCK.getDefaultState());
     }
 }

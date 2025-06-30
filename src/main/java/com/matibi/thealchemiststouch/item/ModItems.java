@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.item;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
+import com.matibi.thealchemiststouch.effect.ModEffects;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
@@ -52,6 +53,37 @@ public class ModItems {
         }
     });
 
+    // Runes
+
+    public static final Item ACID_RUNE = register("acid_rune",
+            new AlchemicalRuneItem(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"acid_rune")))
+                    .maxCount(16),
+                    new StatusEffectInstance(ModEffects.ACID, 1, 1)
+            ));
+
+    public static final Item PETRIFICATION_RUNE = register("petrification_rune",
+            new AlchemicalRuneItem(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"petrification_rune")))
+                    .maxCount(16),
+                    new StatusEffectInstance(ModEffects.PETRIFICATION, 1, 0)
+            ));
+
+    public static final Item ALCHEMIST_RUNE = register("alchemist_rune",
+            new AlchemicalRuneItem(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"alchemist_rune")))
+                    .maxCount(16),
+                    new StatusEffectInstance(ModEffects.ALCHEMIST, 1, 0)
+            ));
+
+    // Pour la rune de base, pas d'effet
+    public static final Item RUNE = register("rune",
+            new AlchemicalRuneItem(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"rune")))
+                    .maxCount(16),
+                    null
+            ));
+
     private static Item register(String id, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID, id), item);
     }
@@ -59,6 +91,13 @@ public class ModItems {
     private static void customFood(FabricItemGroupEntries entries) {
         entries.add(POISONOUS_CARROT);
         entries.add(POISONOUS_BEETROOT);
+    }
+
+    private static void customItem(FabricItemGroupEntries entries) {
+        entries.add(RUNE);
+        entries.add(ACID_RUNE);
+        entries.add(PETRIFICATION_RUNE);
+        entries.add(ALCHEMIST_RUNE);
         entries.add(ALCHEMIST_CORE);
     }
 
@@ -66,5 +105,6 @@ public class ModItems {
         TheAlchemistsTouch.LOGGER.info("Registering mod items for " + TheAlchemistsTouch.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::customFood);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::customItem);
     }
 }

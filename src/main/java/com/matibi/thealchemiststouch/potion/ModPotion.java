@@ -4,8 +4,12 @@ import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.item.ModItems;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
@@ -84,6 +88,7 @@ public class ModPotion {
             ModEffects.ACID, 20 * 30 * 3, 0);
     public static RegistryEntry<Potion> STRONG_ACID = registerPotion("acid", "strong_acid",
             ModEffects.ACID, 20 * 45, 1);
+
 
     public static RegistryEntry<Potion> IGNITION = registerPotion("ignition", "ignition",
             ModEffects.IGNITION, 20 * 45, 0);
@@ -178,12 +183,12 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.AMETHYST_SHARD, ModPotion.BRAIN_WASHING);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.SNOWBALL, ModPotion.FROST);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.COPPER_INGOT, ModPotion.ALCHEMIST);
-            builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.NETHER_WART, ModPotion.DEATH);
+            builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.FERMENTED_SPIDER_EYE, ModPotion.DEATH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.BEETROOT, ModPotion.SATURATION);
             //builder.registerPotionRecipe(Potions.AWKWARD, Items.REDSTONE_BLOCK, ModPotion.ACTIVATION);
             builder.registerPotionRecipe(Potions.STRONG_HEALING, Items.GOLDEN_APPLE, ModPotion.DOUBLEHEALTH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotion.RESURRECTION);
-            builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.GOLDEN_APPLE, ModPotion.INFINITY);
+            builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.CLOCK, ModPotion.INFINITY);
             //builder.registerPotionRecipe(Potions.AWKWARD, Items.WHITE_WOOL, ModPotion.SILENCE);
             //builder.registerPotionRecipe(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotion.SEDATIVE);
 
@@ -218,6 +223,10 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.GLOWSTONE, ModPotion.STRONG_SATURATION);
             builder.registerPotionRecipe(ModPotion.DOUBLEHEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLEHEALTH);
 
+            // Runes
+            registerRune(ModItems.ACID_RUNE, ACID);
+            registerRune(ModItems.ALCHEMIST_RUNE, ALCHEMIST);
+            registerRune(ModItems.PETRIFICATION_RUNE, PETRIFICATION);
         });
     }
 
@@ -226,8 +235,15 @@ public class ModPotion {
                                                         RegistryEntry<net.minecraft.entity.effect.StatusEffect> effect,
                                                         int duration,
                                                         int amplifier) {
-        return Registry.registerReference(Registries.POTION, Identifier.of(TheAlchemistsTouch.MOD_ID, id    ),
+        return Registry.registerReference(Registries.POTION, Identifier.of(TheAlchemistsTouch.MOD_ID, id),
                 new Potion(name, new StatusEffectInstance(effect, duration, amplifier)));
     }
 
+    public static void registerRune(Item item, RegistryEntry<Potion> potion) {
+        ItemStack stack = item.getDefaultStack();
+        stack.set(
+                DataComponentTypes.POTION_CONTENTS,
+                new PotionContentsComponent(potion)
+        );
+    }
 }

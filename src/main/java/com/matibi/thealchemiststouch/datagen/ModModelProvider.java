@@ -1,13 +1,10 @@
 package com.matibi.thealchemiststouch.datagen;
 
-import com.matibi.thealchemiststouch.TheAlchemistsTouch;
+
 import com.matibi.thealchemiststouch.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.*;
-import net.minecraft.util.Identifier;
-
-import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
 

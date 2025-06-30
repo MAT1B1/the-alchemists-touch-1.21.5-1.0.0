@@ -8,7 +8,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.PotionItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.potion.Potion;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;

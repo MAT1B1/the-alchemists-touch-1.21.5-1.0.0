@@ -1,7 +1,6 @@
 package com.matibi.thealchemiststouch;
 
 import com.matibi.thealchemiststouch.effect.ModEffects;
-import com.matibi.thealchemiststouch.item.AlchemicalRuneItem;
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.potion.ModPotion;
 import net.fabricmc.api.ModInitializer;

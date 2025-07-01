@@ -43,7 +43,6 @@ public class AlchemicalRuneItem extends PotionItem {
         if (contents == null || !contents.hasEffects())
             return ActionResult.FAIL;
 
-
         for (StatusEffectInstance effect : contents.getEffects()) {
             StatusEffect effectType = effect.getEffectType().value();
             if (effectType instanceof TerrainApplicableEffect terrainEffect) {
@@ -56,6 +55,4 @@ public class AlchemicalRuneItem extends PotionItem {
         stack.decrement(1);
         return ActionResult.SUCCESS;
     }
-
 }
-

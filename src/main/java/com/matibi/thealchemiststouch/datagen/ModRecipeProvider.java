@@ -2,10 +2,12 @@ package com.matibi.thealchemiststouch.datagen;
 
 
 import com.matibi.thealchemiststouch.item.ModItems;
+import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -37,12 +39,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.POISONOUS_POTATO), conditionsFromItem(Items.POISONOUS_POTATO))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.BREWING, ModItems.RUNE, 3)
-                        .pattern("#S#")
+                createShaped(RecipeCategory.BREWING, ModRunes.RUNE, 3)
+                        .pattern("SSS")
                         .pattern("SAS")
-                        .pattern("#S#")
+                        .pattern("SSS")
                         .input('A', ModItems.ALCHEMIST_CORE)
-                        .input('S', Items.STONE)
+                        .input('S', Items.COBBLESTONE)
                         .criterion(hasItem(ModItems.ALCHEMIST_CORE), conditionsFromItem(ModItems.ALCHEMIST_CORE))
                         .offerTo(exporter);
 

@@ -151,7 +151,8 @@
   "item.the-alchemists-touch.poisonous_carrot" : "Poisonous Carrot",
   "item.the-alchemists-touch.poisonous_beetroot" : "Poisonous Beetroot",
   "item.the-alchemists-touch.alchemist_core" : "Alchemist Core",
-  "item.the-alchemists-touch.rune.effect.default": "Rune",
+  "item.the-alchemists-touch.rune": "Rune",
+  "item.the-alchemists-touch.rune.effect.default": "Infused Rune",
 
   "item.the-alchemists-touch.rune.block_only": "Runes can only be used on blocks",
   "item.the-alchemists-touch.rune.block_not_good": "The block is not compatible"

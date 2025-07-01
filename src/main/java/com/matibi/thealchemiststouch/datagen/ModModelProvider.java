@@ -2,6 +2,7 @@ package com.matibi.thealchemiststouch.datagen;
 
 
 import com.matibi.thealchemiststouch.item.ModItems;
+import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.*;
@@ -23,6 +24,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.POISONOUS_CARROT, Models.GENERATED);
         itemModelGenerator.register(ModItems.ALCHEMIST_CORE, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.RUNE, Models.GENERATED);
+        itemModelGenerator.register(ModRunes.RUNE, Models.GENERATED);
     }
 }

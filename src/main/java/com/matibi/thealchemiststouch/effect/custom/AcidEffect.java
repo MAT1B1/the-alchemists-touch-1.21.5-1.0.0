@@ -33,9 +33,9 @@ public class AcidEffect extends StatusEffect implements TerrainApplicableEffect 
                 for (int dy = 0; dy > -depth; dy--) {
                     BlockPos target = center.add(dx, dy, dz);
 
-                    if (!world.getBlockState(target).isAir()) {
+                    if (!world.getBlockState(target).isAir() && world.getBlockState(target).getHardness(world, target) >= 0.0F)
                         world.breakBlock(target, false);
-                    }
+
                 }
             }
         }

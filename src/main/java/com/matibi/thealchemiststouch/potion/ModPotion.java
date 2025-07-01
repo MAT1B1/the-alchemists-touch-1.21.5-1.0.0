@@ -5,11 +5,8 @@ import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
@@ -17,10 +14,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 public class ModPotion {
     public static RegistryEntry<Potion> LEVITATION = registerPotion("levitation", "levitation",

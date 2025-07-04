@@ -248,7 +248,6 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 
 ## Planned Features
 
-- Potions that interact with blocks and the environment  
 - Alchemical cauldron to combine potion effects  
 - More potions!  
 

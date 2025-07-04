@@ -3,7 +3,6 @@ package com.matibi.thealchemiststouch.potion;
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.item.ModItems;
-import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;

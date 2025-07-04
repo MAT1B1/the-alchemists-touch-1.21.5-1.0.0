@@ -1,7 +1,5 @@
 package com.matibi.thealchemiststouch.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import net.minecraft.block.InventoryProvider;
 import net.minecraft.block.entity.BrewingStandBlockEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

@@ -3,8 +3,6 @@ package com.matibi.thealchemiststouch.recipe;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import com.matibi.thealchemiststouch.rune.Rune;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.PotionContentsComponent;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
@@ -13,8 +11,6 @@ import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.World;
-
-import java.util.Objects;
 
 public class RuneRecipe extends SpecialCraftingRecipe {
     public RuneRecipe(CraftingRecipeCategory category) {

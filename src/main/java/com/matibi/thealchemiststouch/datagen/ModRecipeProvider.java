@@ -40,7 +40,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.POISONOUS_POTATO), conditionsFromItem(Items.POISONOUS_POTATO))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.BREWING, ModRunes.RUNE, 3)
+                createShaped(RecipeCategory.BREWING, ModRunes.RUNE, 8)
                         .pattern("SSS")
                         .pattern("SAS")
                         .pattern("SSS")

@@ -4,10 +4,10 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 
 ### Features
 
-- New potions with unique effects  
-- Alternative ingredients available early in the game  
-- Cooldowns and stackable potions  
-- Brewing system rebalanced around ingredient rarity and origin  
+- Dozens of new potions with unique and powerful effects  
+- A new magical item: **runes**, crafted from valid potions and used for terrain-based alchemy  
+- Alternative brewing ingredients available early in the game  
+- Stackable potions with built-in cooldowns to prevent spamming  
 
 ## Early-Game Potions
 
@@ -244,6 +244,71 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
   <br>
   <br>
 </details>
+</details>
+
+## Runes  
+<details>  
+<summary>Click to expand</summary>  
+<br>
+
+These special items are extracted from custom potions using a crafting recipe. When right-clicked on blocks, **terrain-applicable runes** trigger powerful localized effects.  
+
+Only certain runes are compatible with this interaction:  
+
+<details>
+<summary><strong>🧪 Rune of Acid</strong></summary>  
+Destroys most blocks upon contact, mimicking acid corrosion (can not destoy blocks if the hardness is too hight).  
+ <br>
+<sub><strong>base:</strong> Acid Potion</sub>  
+  <br>
+  <br>
+</details>
+
+<details>
+<summary><strong>🧪 Rune of Strong Acid</strong></summary>  
+Same as the regular Acid rune, but cthe radius is wider and can destroy more blocks.  
+ <br>
+<sub><strong>Base:</strong>Potion of Acidity II</sub>  
+  <br>
+  <br>
+</details>
+
+<details>
+<summary><strong>🗿 Rune of Petrification</strong></summary>  
+Turns surrounding blocks into stone-like variants.  
+ <br>
+<sub><strong>Base:</strong>Potion of Petrification</sub>  
+  <br>
+  <br>
+</details>
+
+<details>
+<summary><strong>🗿 Rune of Strong Petrification</strong></summary>  
+Transform blocks into bedrock (only available in creative for now)
+ <br>
+<sub><strong>Base:</strong> Petrification Potion II</sub>  
+  <br>
+  <br>
+</details>
+
+<details>
+<summary><strong>🧙 Rune of the Alchemist</strong></summary>  
+Transmutes coal blocks variants into gold blocks variants.  
+ <br>
+<sub><strong>Base:</strong> Alchemist Potion</sub>  
+  <br>
+  <br>
+</details>
+
+<details>
+<summary><strong>🔥 Rune of Ignition</strong></summary>  
+Transform blocks like a furnace will do 
+ <br>
+<sub><strong>Base:</strong> Ignition Potion</sub>  
+  <br>
+  <br>
+</details>
+
 </details>
 
 ## Planned Features

@@ -252,10 +252,14 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 <br>
 
 These special items are extracted from custom potions using a crafting recipe. When right-clicked on blocks, **terrain-applicable runes** trigger powerful localized effects.  
+<summary><strong>Rune recipe:</strong></summary>
+<img src="https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/raw/master/src/main/resources/assets/the-alchemists-touch/image/rune_recipe.png" alt="Alchemist Core Crafting Recipe" style="width:256px; image-rendering: pixelated;">
+
+<summary><strong>Rune with effect recipe:</strong></summary>
+<img src="https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/raw/master/src/main/resources/assets/the-alchemists-touch/image/magic_rune_recipe.png" alt="Alchemist Core Crafting Recipe" style="width:256px; image-rendering: pixelated;">
 
 Only certain runes are compatible with this interaction:  
-
-<details>
+ <details>
 <summary><strong>🧪 Rune of Acid</strong></summary>  
 Destroys most blocks upon contact, mimicking acid corrosion (can not destoy blocks if the hardness is too hight).  
  <br>

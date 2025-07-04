@@ -3,12 +3,16 @@ package com.matibi.thealchemiststouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.potion.ModPotion;
+import com.matibi.thealchemiststouch.recipe.ModRecipeSerializer;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +27,10 @@ public class TheAlchemistsTouch implements ModInitializer {
 		ModEffects.register();
 		ModItems.register();
 		ModRunes.register();
+
+		Registry.register(Registries.RECIPE_SERIALIZER,
+				Identifier.of(MOD_ID, "rune_from_potion"),
+				ModRecipeSerializer.RUNE_FROM_POTION);
 
 		// max stack des potions
 		DefaultItemComponentEvents.MODIFY.register(context -> context.modify(item ->

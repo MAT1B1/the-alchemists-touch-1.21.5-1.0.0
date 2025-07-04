@@ -1,5 +1,7 @@
 package com.matibi.thealchemiststouch.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import net.minecraft.block.InventoryProvider;
 import net.minecraft.block.entity.BrewingStandBlockEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -11,6 +13,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static java.lang.Math.min;
+
 @Mixin(BrewingStandBlockEntity.class)
 public abstract class BrewingStandBlockEntityMixin {
 
@@ -21,7 +25,8 @@ public abstract class BrewingStandBlockEntityMixin {
         ItemStack fuelStack = accessor.getInventory().get(4);
 
         if (accessor.getFuel() < 20 && fuelStack.getItem() == Items.LAVA_BUCKET) {
-            accessor.setFuel(accessor.getFuel() + 1);
+            int new_fuel = min(accessor.getFuel() + 4, 20);
+            accessor.setFuel(new_fuel);
             accessor.getInventory().set(4, new ItemStack(Items.BUCKET));
             world.updateListeners(pos, state, state, 3);
         }

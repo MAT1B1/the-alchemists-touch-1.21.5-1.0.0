@@ -2,84 +2,73 @@ package com.matibi.thealchemiststouch.rune;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
-import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
-import com.matibi.thealchemiststouch.item.AlchemicalRuneItem;
+import com.mojang.serialization.Lifecycle;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.*;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.text.Text;
+import net.minecraft.registry.entry.RegistryEntryInfo;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 public class ModRunes {
+    public static final RegistryKey<Registry<Rune>> RUNE_REGISTRY_KEY =
+            RegistryKey.ofRegistry(Identifier.of(TheAlchemistsTouch.MOD_ID, "rune"));
+
+    public static final SimpleRegistry<Rune> RUNE_REGISTRY = new SimpleRegistry<>(
+            RUNE_REGISTRY_KEY,
+            Lifecycle.stable()
+    );
+
     public static final Item RUNE = Registry.register(Registries.ITEM,
             Identifier.of(TheAlchemistsTouch.MOD_ID, "rune"),
-            new AlchemicalRuneItem(new Item.Settings()
-                .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"rune")))
-                .maxCount(16)
-        ));
-
-    private static void customItem(FabricItemGroupEntries entries) {
-        entries.add(RUNE);
-        entries.add(createBaseRune());
-        entries.add(createRunes(ModEffects.ACID, 0));
-        entries.add(createRunes(ModEffects.ACID, 1));
-        entries.add(createRunes(ModEffects.ALCHEMIST, 0));
-        entries.add(createRunes(ModEffects.PETRIFICATION, 0));
-        entries.add(createRunes(ModEffects.PETRIFICATION, 1));
-        entries.add(createRunes(ModEffects.IGNITION, 0));
-    }
-
-    public static ItemStack createBaseRune() {
-        ItemStack stack = new ItemStack(ModRunes.RUNE);
-        stack.set(DataComponentTypes.POTION_CONTENTS, PotionContentsComponent.DEFAULT);
-        String translationKey = "item.the-alchemists-touch.rune.effect.default";
-        stack.set(DataComponentTypes.CUSTOM_NAME,
-                Text.empty().append(Text.translatable(translationKey)).styled(style ->
-                        style.withItalic(false)));
-        return stack;
-    }
-
-    public static ItemStack createRunes(RegistryEntry<StatusEffect> entry, int amplifier) {
-        StatusEffect effect = entry.value();
-        if (effect instanceof TerrainApplicableEffect &&
-                Objects.requireNonNull(Registries.STATUS_EFFECT.getId(effect)).getNamespace().equals(TheAlchemistsTouch.MOD_ID)) {
-            ItemStack rune = new ItemStack(ModRunes.RUNE);
-
-            rune.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(
-                    Optional.empty(),
-                    Optional.empty(),
-                    List.of(new StatusEffectInstance(entry, 1, amplifier)),
-                    Optional.empty()
+            new RuneItem(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheAlchemistsTouch.MOD_ID,"rune")))
+                    .maxCount(16)
+                    .component(DataComponentTypes.POTION_CONTENTS, PotionContentsComponent.DEFAULT)
             ));
-            String effectId = Objects.requireNonNull(Registries.STATUS_EFFECT.getId(effect)).getPath();
-            String translationKey = "item.the-alchemists-touch.rune.effect." + effectId;
-            rune.set(DataComponentTypes.CUSTOM_NAME,
-                    Text.empty().append(Text.translatable(translationKey)).styled(style ->
-                            style.withItalic(false)));
 
-            return rune;
+    public static RegistryEntry<Rune> RUNE_ACID = registerRunes("acid", ModEffects.ACID, 0);
+
+    public static RegistryEntry<Rune> RUNE_ACID_STRONG = registerRunes("strong_acid", ModEffects.ACID, 1);
+
+    public static RegistryEntry<Rune> RUNE_PETRIFICATION = registerRunes("petrification", ModEffects.PETRIFICATION, 0);
+
+    public static RegistryEntry<Rune> RUNE_PETRIFICATION_STRONG = registerRunes("strong_petrification", ModEffects.PETRIFICATION, 1);
+
+    public static RegistryEntry<Rune> RUNE_ALCHEMIST = registerRunes("alchemist", ModEffects.ALCHEMIST, 0);
+
+    public static RegistryEntry<Rune> RUNE_IGITION = registerRunes("ignition", ModEffects.IGNITION, 0);
+
+    public static RegistryEntry<Rune> registerRunes(String name, RegistryEntry<StatusEffect> effect, int amplifier) {
+        Identifier id = Identifier.of(TheAlchemistsTouch.MOD_ID, name + "_rune");
+        Rune rune = new Rune(id, effect, amplifier);
+        RegistryKey<Rune> key = RegistryKey.of(RUNE_REGISTRY_KEY, id);
+
+        RegistryEntryInfo info = RegistryEntryInfo.DEFAULT;
+        RUNE_REGISTRY.add(key, rune, info);
+        return RUNE_REGISTRY.getEntry(rune);
+    }
+
+    private static void customRunes(FabricItemGroupEntries entries) {
+        entries.add(RUNE);
+        for (RegistryEntry<Rune> entry : ModRunes.RUNE_REGISTRY.streamEntries().toList()) {
+            ItemStack stack = Rune.getItemStack(entry);
+            if (!stack.isEmpty()) {
+                entries.add(stack);
+            }
         }
-        return ItemStack.EMPTY;
     }
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod runes for " + TheAlchemistsTouch.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModRunes::customItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModRunes::customRunes);
+
     }
 }

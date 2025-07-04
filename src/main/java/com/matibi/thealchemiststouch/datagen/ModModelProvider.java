@@ -24,6 +24,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.POISONOUS_CARROT, Models.GENERATED);
         itemModelGenerator.register(ModItems.ALCHEMIST_CORE, Models.GENERATED);
 
-        itemModelGenerator.register(ModRunes.RUNE, Models.GENERATED);
+        itemModelGenerator.registerWithDyeableOverlay(ModRunes.RUNE);
     }
 }

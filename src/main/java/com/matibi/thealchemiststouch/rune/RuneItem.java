@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.item;
+package com.matibi.thealchemiststouch.rune;
 
 import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
 import net.minecraft.component.DataComponentTypes;
@@ -16,9 +16,9 @@ import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
 
-public class AlchemicalRuneItem extends PotionItem {
+public class RuneItem extends PotionItem {
 
-    public AlchemicalRuneItem(Settings settings) {
+    public RuneItem(Settings settings) {
         super(settings);
     }
 

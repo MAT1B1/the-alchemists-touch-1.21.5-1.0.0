@@ -5,6 +5,7 @@ import com.matibi.thealchemiststouch.effect.ModEffects;
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Items;
@@ -219,14 +220,12 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.THORNS, Items.GLOWSTONE, ModPotion.STRONG_THORNS);
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.GLOWSTONE, ModPotion.STRONG_SATURATION);
             builder.registerPotionRecipe(ModPotion.DOUBLEHEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLEHEALTH);
-
-            builder.registerPotionType(ModRunes.RUNE);
         });
     }
 
     private static RegistryEntry<Potion> registerPotion(String name,
                                                         String id,
-                                                        RegistryEntry<net.minecraft.entity.effect.StatusEffect> effect,
+                                                        RegistryEntry<StatusEffect> effect,
                                                         int duration,
                                                         int amplifier) {
         return Registry.registerReference(Registries.POTION, Identifier.of(TheAlchemistsTouch.MOD_ID, id),

@@ -51,9 +51,12 @@ public class PetrificationEffect extends StatusEffect implements TerrainApplicab
 
     @Override
     public void applyOnBlock(ServerWorld world, BlockPos block, int duration, int amplifier) {
-        if (amplifier == 0 && !world.getBlockState(block).isOf(Blocks.COBBLESTONE))
-            world.setBlockState(block, Blocks.COBBLESTONE.getDefaultState());
-        else if (amplifier > 0)
+        if (amplifier == 0 && !world.getBlockState(block).isOf(Blocks.COBBLESTONE)) {
+            if (world.getBlockState(block).isOf(Blocks.SAND) || world.getBlockState(block).isOf(Blocks.RED_SAND))
+                world.setBlockState(block, Blocks.SANDSTONE.getDefaultState());
+            else
+                world.setBlockState(block, Blocks.COBBLESTONE.getDefaultState());
+        } else if (amplifier > 0)
             world.setBlockState(block, Blocks.BEDROCK.getDefaultState());
 
     }

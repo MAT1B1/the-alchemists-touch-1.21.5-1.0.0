@@ -320,4 +320,4 @@ Transform blocks like a furnace will do
 
 ## Having Issues With the Mod?
 
-- Email: mathias.bagal@gmail.com
+- Email: matibi.games@gmail.com

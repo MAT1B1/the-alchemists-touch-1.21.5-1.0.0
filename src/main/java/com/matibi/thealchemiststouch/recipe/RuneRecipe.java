@@ -35,9 +35,8 @@ public class RuneRecipe extends SpecialCraftingRecipe {
                 }
             }
             return true;
-        } else {
+        } else
             return false;
-        }
     }
 
     public ItemStack craft(CraftingRecipeInput craftingRecipeInput, RegistryWrapper.WrapperLookup wrapperLookup) {

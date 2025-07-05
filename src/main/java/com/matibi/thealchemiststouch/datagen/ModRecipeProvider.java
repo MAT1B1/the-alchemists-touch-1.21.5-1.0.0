@@ -1,7 +1,7 @@
 package com.matibi.thealchemiststouch.datagen;
 
-import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.item.ModItems;
+import com.matibi.thealchemiststouch.recipe.CombinationRecipe;
 import com.matibi.thealchemiststouch.recipe.RuneRecipe;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -51,7 +51,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 // Génère la recette spéciale pour la rune à partir d'une potion
                 ComplexRecipeJsonBuilder.create(RuneRecipe::new)
-                        .offerTo(exporter, TheAlchemistsTouch.MOD_ID);
+                        .offerTo(exporter, "rune_recipe");
+                ComplexRecipeJsonBuilder.create(CombinationRecipe::new)
+                        .offerTo(exporter, "combination_recipe");
             }
         };
     }

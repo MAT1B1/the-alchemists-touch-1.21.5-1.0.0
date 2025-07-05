@@ -7,7 +7,8 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 - Dozens of new potions with unique and powerful effects  
 - A new magical item: **runes**, crafted from valid potions and used for terrain-based alchemy  
 - Alternative brewing ingredients available early in the game  
-- Stackable potions with built-in cooldowns to prevent spamming  
+- Stackable potions with built-in cooldowns to prevent spamming
+- Multi-effect potion (craftable in a Crafting Table)
 
 ## Early-Game Potions
 
@@ -27,7 +28,7 @@ A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more s
 <img src="https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/raw/master/src/main/resources/assets/the-alchemists-touch/image/recipe.png" alt="Alchemist Core Crafting Recipe" style="width:256px; image-rendering: pixelated;">
 </details>
 
-## Potion List
+## New Potions
 <details>
 <summary>Clik to expand</summary>
 <br>
@@ -251,7 +252,9 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 <summary>Click to expand</summary>  
 <br>
 
-These special items are extracted from custom potions using a crafting recipe. When right-clicked on blocks, **terrain-applicable runes** trigger powerful localized effects.  
+These special items are extracted from custom potions using a crafting recipe. When right-clicked on blocks, **terrain-applicable runes** trigger powerful localized effects.
+<br>
+be careful: only one effect can be applied  to a rune.
 <summary><strong>Rune recipe:</strong></summary>
 <img src="https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0/raw/master/src/main/resources/assets/the-alchemists-touch/image/rune_recipe.png" alt="Alchemist Core Crafting Recipe" style="width:256px; image-rendering: pixelated;">
 
@@ -317,11 +320,10 @@ Transform blocks like a furnace will do
 
 ## Planned Features
 
-- Alchemical cauldron to combine potion effects  
 - More potions!  
 
 > A smarter and more immersive way to craft and use potions in Minecraft.
 
-## Having Issues With the Mod?
+## Got feedback or ideas for the mod? Let me know!
 
 - Email: matibi.games@gmail.com

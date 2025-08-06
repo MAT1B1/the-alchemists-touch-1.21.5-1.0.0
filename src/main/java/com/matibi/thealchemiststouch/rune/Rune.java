@@ -6,7 +6,6 @@ import net.minecraft.component.ComponentType;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.component.type.PotionContentsComponent;
-import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
@@ -68,13 +67,12 @@ public record Rune(Identifier id, RegistryEntry<StatusEffect> effect, int amplif
                     Text.empty().append(Text.translatable(translationKey)).styled(style -> style.withItalic(false)));
 
             // Couleur selon l'effet
-            stack.set(DataComponentTypes.DYED_COLOR, new DyedColorComponent(effect.value().getColor()));
+            stack.set(DataComponentTypes.DYED_COLOR, new DyedColorComponent(effect.value().getColor(), false));
 
             // Cache certains composants dans le tooltip
             SequencedSet<ComponentType<?>> hidden = new LinkedHashSet<>();
             hidden.add(DataComponentTypes.ATTRIBUTE_MODIFIERS);
             hidden.add(DataComponentTypes.DYED_COLOR);
-            stack.set(DataComponentTypes.TOOLTIP_DISPLAY, new TooltipDisplayComponent(false, hidden));
 
             return stack;
         }

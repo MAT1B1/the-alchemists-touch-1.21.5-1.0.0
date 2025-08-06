@@ -31,8 +31,6 @@ public class IgnitionEffect extends StatusEffect implements TerrainApplicableEff
         SMELTABLES.put(Blocks.RAW_IRON_BLOCK, Blocks.IRON_BLOCK);
         SMELTABLES.put(Blocks.RAW_COPPER_BLOCK, Blocks.COPPER_BLOCK);
         SMELTABLES.put(Blocks.RAW_GOLD_BLOCK, Blocks.GOLD_BLOCK);
-        SMELTABLES.put(Blocks.SHORT_GRASS, Blocks.SHORT_DRY_GRASS);
-        SMELTABLES.put(Blocks.TALL_GRASS, Blocks.TALL_DRY_GRASS);
     }
 
     public IgnitionEffect() {

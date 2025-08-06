@@ -1,6 +1,6 @@
 ## The Alchemist’s Touch
 
-A Fabric mod for Minecraft 1.21.5 that overhauls the potion system with a more strategic, flexible, and early-game-friendly approach.
+A Fabric mod that overhauls the potion system with a more strategic, flexible, and early-game-friendly approach.
 
 ### Features
 

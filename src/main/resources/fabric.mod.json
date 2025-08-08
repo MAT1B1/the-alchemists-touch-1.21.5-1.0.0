@@ -9,8 +9,8 @@
 		"Matibi"
 	],
 	"contact": {
-		"homepage": "https://github.com/MAT1B1/the-alchemists-touch-template-1.21.5",
-		"sources": "https://github.com/MAT1B1/the-alchemists-touch-template-1.21.5"
+		"homepage": "https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0",
+		"sources": "https://github.com/MAT1B1/the-alchemists-touch-1.21.5-1.0.0"
 	},
 	"license": "MIT",
 	"icon": "assets/the-alchemists-touch/icon.png",
@@ -31,7 +31,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.5",
+		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

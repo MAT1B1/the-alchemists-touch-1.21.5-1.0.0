@@ -69,17 +69,11 @@ public final class OreESP {
 
             R = 5 + 5 * Objects.requireNonNull(mc.player.getStatusEffect(ModEffects.ORE_SENSE)).getAmplifier();
 
-            // progress 0→1 sur la fenêtre de 2s
-            int since = tick - pulseStartTick;
-            float s = since / (float) DURATION_T;
-            float a = (float)Math.sin(Math.PI * s);
-            int alpha = Math.max(0, Math.min(255, Math.round(255 * a)));
-
             MatrixStack matrices = ctx.matrixStack();
             Vec3d cam = mc.gameRenderer.getCamera().getPos();
 
             OutlineVertexConsumerProvider outline = mc.getBufferBuilders().getOutlineVertexConsumers();
-            outline.setColor(253, 255, 112, 50);
+            outline.setColor(253, 255, 112, 255);
             VertexConsumer vc = outline.getBuffer(RenderLayer.getOutline(Atlases.BLOCKS));
             BlockRenderManager brm = mc.getBlockRenderManager();
             if (matrices != null) {

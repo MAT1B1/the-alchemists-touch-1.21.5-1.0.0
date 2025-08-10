@@ -5,6 +5,7 @@ import com.matibi.thealchemiststouch.rune.Rune;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.IngredientPlacement;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
@@ -37,6 +38,11 @@ public class RuneRecipe extends SpecialCraftingRecipe {
             return true;
         } else
             return false;
+    }
+
+    @Override
+    public IngredientPlacement getIngredientPlacement() {
+        return super.getIngredientPlacement();
     }
 
     public ItemStack craft(CraftingRecipeInput craftingRecipeInput, RegistryWrapper.WrapperLookup wrapperLookup) {

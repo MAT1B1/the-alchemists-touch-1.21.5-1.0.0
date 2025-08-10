@@ -15,7 +15,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ItemTags.BREWING_FUEL)
+        valueLookupBuilder(ItemTags.BREWING_FUEL)
                 .add(Items.LAVA_BUCKET);
     }
 }

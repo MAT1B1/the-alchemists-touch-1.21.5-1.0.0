@@ -1,6 +1,7 @@
-package com.matibi.thealchemiststouch.mixin;
+package com.matibi.thealchemiststouch.mixin.brewingNpotion;
 
 
+import com.matibi.thealchemiststouch.effect.ModEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.LingeringPotionItem;
@@ -18,8 +19,11 @@ public abstract class LingeringPotionItemMixin {
     @Inject(method = "use", at = @At("HEAD"))
     private void applyCooldownOnUse(World world, PlayerEntity user, Hand hand,  CallbackInfoReturnable<ActionResult> cir) {
         if (!world.isClient) {
+            int time = 5 * 20;
+            if (user.hasStatusEffect(ModEffects.LONG_COOLDOWN)) time *= 2;
+            if (user.hasStatusEffect(ModEffects.SHORT_COOLDOWN)) time /= 2;
             ItemStack stack = user.getStackInHand(hand);
-            user.getItemCooldownManager().set(stack, 5 * 20);
+            user.getItemCooldownManager().set(stack, time);
         }
     }
 }

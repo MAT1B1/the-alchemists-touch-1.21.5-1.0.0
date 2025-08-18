@@ -86,7 +86,6 @@ public class ModPotion {
     public static RegistryEntry<Potion> STRONG_ACID = registerPotion("acid", "strong_acid",
             ModEffects.ACID, 20 * 45, 1);
 
-
     public static RegistryEntry<Potion> IGNITION = registerPotion("ignition", "ignition",
             ModEffects.IGNITION, 20 * 45, 0);
     public static RegistryEntry<Potion> LONG_IGNITION = registerPotion("ignition", "long_ignition",
@@ -125,15 +124,10 @@ public class ModPotion {
     public static RegistryEntry<Potion> STRONG_SATURATION = registerPotion("saturation", "strong_saturation",
             ModEffects.SATURATION, 20 * 45, 1);
 
-    /*public static RegistryEntry<Potion> ACTIVATION = registerPotion("activation", "activation",
-            ModEffects.ACTIVATION, 20 * 60 * 3, 0);
-    public static RegistryEntry<Potion> LONG_ACTIVATION = registerPotion("activation", "long_activation",
-            ModEffects.ACTIVATION, 20 * 60 * 8, 0);*/
-
     public static RegistryEntry<Potion> DOUBLEHEALTH = registerPotion("doublehealth", "doublehealth",
-            ModEffects.DOUBLEHEALTH, 1, 0);
+            ModEffects.DOUBLE_HEALTH, 1, 0);
     public static RegistryEntry<Potion> STRONG_DOUBLEHEALTH = registerPotion("doublehealth", "strong_doublehealth",
-            ModEffects.DOUBLEHEALTH, 1, 1);
+            ModEffects.DOUBLE_HEALTH, 1, 1);
 
     public static RegistryEntry<Potion> RESURRECTION = registerPotion("resurrection", "resurrection",
             ModEffects.RESURRECTION, -1, 0);
@@ -141,13 +135,31 @@ public class ModPotion {
     public static RegistryEntry<Potion> INFINITY = registerPotion("infinity", "infinity",
             ModEffects.INFINITY, 1, 0);
 
-    /*public static RegistryEntry<Potion> SILENCE = registerPotion("silence", "silence",
-            ModEffects.SILENCE, 20 * 60 * 3, 0);
-    public static RegistryEntry<Potion> LONG_SILENCE = registerPotion("silence", "long_silence",
-            ModEffects.SILENCE, 20 * 60 * 8, 0);
+    public static final RegistryEntry<Potion> HASTE = registerPotion("haste", "haste",
+            StatusEffects.HASTE, 20 * 60 * 3, 0);
+    public static final RegistryEntry<Potion> LONG_HASTE = registerPotion("haste", "long_haste",
+            StatusEffects.HASTE, 20 * 60 * 8, 0);
 
-    public static RegistryEntry<Potion> SEDATIVE = registerPotion("sedative", "sedative",
-            ModEffects.SEDATIVE, 20 * 3, 0);*/
+    public static final RegistryEntry<Potion> MINING_FATIGUE = registerPotion("mining_fatigue", "mining_fatigue",
+            StatusEffects.MINING_FATIGUE, 20 * 60 * 3, 0);
+    public static final RegistryEntry<Potion> STRONG_MINING_FATIGUE = registerPotion("mining_fatigue", "strong_mining_fatigue",
+            StatusEffects.MINING_FATIGUE, 20 * 60 * 3, 1);
+    public static final RegistryEntry<Potion> LONG_MINING_FATIGUE = registerPotion("mining_fatigue", "long_mining_fatigue",
+            StatusEffects.MINING_FATIGUE, 20 * 60 * 8, 0);
+
+    public static final RegistryEntry<Potion> VITALITY = registerPotion("vitality", "vitality",
+            ModEffects.VITALITY, 1, 0);
+
+    public static final RegistryEntry<Potion> LONG_COOLDOWN = registerPotion("long_cooldown", "long_cooldown",
+            ModEffects.LONG_COOLDOWN, 20 * 60 * 3, 0);
+    public static final RegistryEntry<Potion> LONG_LONG_COOLDOWN = registerPotion("long_cooldown", "long_long_cooldown",
+            ModEffects.LONG_COOLDOWN, 20 * 60 * 8, 0);
+
+    public static final RegistryEntry<Potion> SHORT_COOLDOWN = registerPotion("short_cooldown", "short_cooldown",
+            ModEffects.SHORT_COOLDOWN, 20 * 60 * 3, 0);
+    public static final RegistryEntry<Potion> LONG_SHORT_COOLDOWN = registerPotion("short_cooldown", "long_short_cooldown",
+            ModEffects.SHORT_COOLDOWN, 20 * 60 * 8, 0);
+
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod potions for " + TheAlchemistsTouch.MOD_ID);
@@ -170,7 +182,7 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.LILY_PAD, ModPotion.LIQUID_WALKER);
             builder.registerPotionRecipe(Potions.NIGHT_VISION, Items.IRON_ORE, ModPotion.ORE_SENSE);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.ECHO_SHARD, ModPotion.RESONANCE);
-            builder.registerPotionRecipe(Potions.AWKWARD, Items.CLOCK, ModPotion.REACTIVATION);
+            builder.registerPotionRecipe(ModPotion.SHORT_COOLDOWN, Items.CLOCK, ModPotion.REACTIVATION);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.MILK_BUCKET, ModPotion.PURIFICATION);
             builder.registerPotionRecipe(Potions.TURTLE_MASTER, Items.OBSIDIAN, ModPotion.PETRIFICATION);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.ROTTEN_FLESH, ModPotion.ACID);
@@ -182,12 +194,14 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.COPPER_INGOT, ModPotion.ALCHEMIST);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.FERMENTED_SPIDER_EYE, ModPotion.DEATH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.BEETROOT, ModPotion.SATURATION);
-            //builder.registerPotionRecipe(Potions.AWKWARD, Items.REDSTONE_BLOCK, ModPotion.ACTIVATION);
             builder.registerPotionRecipe(Potions.STRONG_HEALING, Items.GOLDEN_APPLE, ModPotion.DOUBLEHEALTH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotion.RESURRECTION);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.CLOCK, ModPotion.INFINITY);
-            //builder.registerPotionRecipe(Potions.AWKWARD, Items.WHITE_WOOL, ModPotion.SILENCE);
-            //builder.registerPotionRecipe(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotion.SEDATIVE);
+            builder.registerPotionRecipe(Potions.AWKWARD, Items.IRON_PICKAXE, ModPotion.HASTE);
+            builder.registerPotionRecipe(ModPotion.HASTE, Items.FERMENTED_SPIDER_EYE, ModPotion.MINING_FATIGUE);
+            builder.registerPotionRecipe(ModPotion.STRONG_DOUBLEHEALTH, Items.TOTEM_OF_UNDYING, ModPotion.VITALITY);
+            builder.registerPotionRecipe(Potions.AWKWARD, Items.CLOCK, ModPotion.SHORT_COOLDOWN);
+            builder.registerPotionRecipe(ModPotion.SHORT_COOLDOWN, Items.FERMENTED_SPIDER_EYE, ModPotion.LONG_COOLDOWN);
 
             // version longue
             builder.registerPotionRecipe(ModPotion.LEVITATION, Items.REDSTONE, ModPotion.LONG_LEVITATION);
@@ -207,8 +221,12 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.BRAIN_WASHING, Items.REDSTONE, ModPotion.LONG_BRAIN_WASHING);
             builder.registerPotionRecipe(ModPotion.FROST, Items.REDSTONE, ModPotion.LONG_FROST);
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.REDSTONE, ModPotion.LONG_SATURATION);
-            //builder.registerPotionRecipe(ModPotion.ACTIVATION, Items.REDSTONE, ModPotion.LONG_ACTIVATION);
-            //builder.registerPotionRecipe(ModPotion.SILENCE, Items.REDSTONE, ModPotion.LONG_SILENCE);
+            builder.registerPotionRecipe(ModPotion.HASTE, Items.REDSTONE, ModPotion.LONG_HASTE);
+            builder.registerPotionRecipe(ModPotion.MINING_FATIGUE, Items.REDSTONE, ModPotion.LONG_MINING_FATIGUE);
+            builder.registerPotionRecipe(ModPotion.LONG_HASTE, Items.FERMENTED_SPIDER_EYE, ModPotion.LONG_MINING_FATIGUE);
+            builder.registerPotionRecipe(ModPotion.SHORT_COOLDOWN, Items.REDSTONE, ModPotion.LONG_SHORT_COOLDOWN);
+            builder.registerPotionRecipe(ModPotion.LONG_COOLDOWN, Items.REDSTONE, ModPotion.LONG_LONG_COOLDOWN);
+            builder.registerPotionRecipe(ModPotion.LONG_SHORT_COOLDOWN, Items.FERMENTED_SPIDER_EYE, ModPotion.LONG_LONG_COOLDOWN);
 
             // version strong
             builder.registerPotionRecipe(ModPotion.ALCOHOL, Items.GLOWSTONE, ModPotion.STRONG_ALCOHOL);
@@ -219,6 +237,7 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.THORNS, Items.GLOWSTONE, ModPotion.STRONG_THORNS);
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.GLOWSTONE, ModPotion.STRONG_SATURATION);
             builder.registerPotionRecipe(ModPotion.DOUBLEHEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLEHEALTH);
+            builder.registerPotionRecipe(ModPotion.MINING_FATIGUE, Items.GLOWSTONE, ModPotion.STRONG_MINING_FATIGUE);
         });
     }
 

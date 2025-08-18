@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.mixin;
+package com.matibi.thealchemiststouch.mixin.brewingNpotion;
 
 import net.minecraft.block.entity.BrewingStandBlockEntity;
 import net.minecraft.util.collection.DefaultedList;

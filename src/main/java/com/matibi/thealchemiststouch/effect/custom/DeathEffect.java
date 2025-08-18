@@ -2,10 +2,15 @@ package com.matibi.thealchemiststouch.effect.custom;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageType;
+import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class DeathEffect extends StatusEffect {
     public DeathEffect() {
@@ -29,6 +34,11 @@ public class DeathEffect extends StatusEffect {
                 float currentHealth = target.getHealth();
 
                 if (currentHealth > maxHealth / 2) {
+                    if (attacker != null) {
+                        float dmg = Objects.requireNonNull(attacker.getControllingPassenger()).getMaxHealth();
+                        attacker.damage(world, world.getDamageSources().magic(), dmg);
+                    }
+
                     target.setHealth(maxHealth / 2);
                 }
             } else {

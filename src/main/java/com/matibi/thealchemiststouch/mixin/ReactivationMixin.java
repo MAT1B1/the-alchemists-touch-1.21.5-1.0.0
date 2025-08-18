@@ -12,16 +12,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin {
+public abstract class ReactivationMixin {
 
     @Unique
     private boolean shouldUpdate = true;
 
     @Inject(method = "onStatusEffectApplied", at = @At("HEAD"))
     private void onStatusEffectApplied(StatusEffectInstance newEffect, @Nullable Entity source, CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity)(Object)this;
+        LivingEntity entity = (LivingEntity) (Object) this;
 
-        if (newEffect.getEffectType() == ModEffects.REACTIVATION)  return;
+        if (newEffect.getEffectType() == ModEffects.REACTIVATION) return;
 
         if (entity.hasStatusEffect(ModEffects.REACTIVATION)) {
             int newDuration = 30 * 20;
@@ -31,8 +31,8 @@ public abstract class LivingEntityMixin {
             }
             for (StatusEffectInstance active : entity.getStatusEffects()) {
                 if (!active.getEffectType().equals(newEffect.getEffectType())
-                    && !active.getEffectType().equals(ModEffects.REACTIVATION)
-                    && shouldUpdate) {
+                        && !active.getEffectType().equals(ModEffects.REACTIVATION)
+                        && shouldUpdate) {
                     shouldUpdate = false;
                     entity.addStatusEffect(new StatusEffectInstance(
                             active.getEffectType(),
@@ -47,30 +47,4 @@ public abstract class LivingEntityMixin {
             }
         }
     }
-
-    @Inject(method = "jump", at = @At("HEAD"), cancellable = true)
-    private void cancelJumpIfPetrified(CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity)(Object)this;
-        if (entity.hasStatusEffect(ModEffects.PETRIFICATION)) {
-            ci.cancel();
-        }
-    }
-
-    @Inject(method = "tickActiveItemStack", at = @At("HEAD"), cancellable = true)
-    private void stopUsingItemIfPetrified(CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity)(Object)this;
-        if (entity.hasStatusEffect(ModEffects.PETRIFICATION)) {
-            entity.clearActiveItem();
-            ci.cancel();
-        }
-    }
-
-    @Inject(method = "dropInventory", at = @At("HEAD"), cancellable = true)
-    private void preventDropIfAcidOrPetrified(CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity)(Object)this;
-        if (entity.hasStatusEffect(ModEffects.ACID) || entity.hasStatusEffect(ModEffects.PETRIFICATION)) {
-            ci.cancel();
-        }
-    }
 }
-

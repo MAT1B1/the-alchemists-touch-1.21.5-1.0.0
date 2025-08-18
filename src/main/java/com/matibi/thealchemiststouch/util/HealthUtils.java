@@ -30,12 +30,5 @@ public class HealthUtils {
         if (player.getHealth() > player.getMaxHealth())
             player.setHealth(player.getMaxHealth());
     }
-
-    public static void resetHealth(PlayerEntity player) {
-        var attr = player.getAttributeInstance(EntityAttributes.MAX_HEALTH);
-        if (attr != null) {
-            attr.removeModifier(HEALTH_BONUS_ID);
-        }
-    }
 }
 

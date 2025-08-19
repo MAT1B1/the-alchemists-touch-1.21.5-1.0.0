@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch;
 
 import com.matibi.thealchemiststouch.effect.ModEffects;
+import com.matibi.thealchemiststouch.group.ModItemGroups;
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.potion.ModPotion;
 import com.matibi.thealchemiststouch.recipe.ModRecipeSerializer;
@@ -25,6 +26,7 @@ public class TheAlchemistsTouch implements ModInitializer {
 		ModItems.register();
 		ModRunes.register();
 		ModRecipeSerializer.register();
+        ModItemGroups.register();
 
 		// max stack des potions
 		DefaultItemComponentEvents.MODIFY.register(context -> context.modify(item ->

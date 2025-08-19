@@ -124,9 +124,9 @@ public class ModPotion {
     public static RegistryEntry<Potion> STRONG_SATURATION = registerPotion("saturation", "strong_saturation",
             ModEffects.SATURATION, 20 * 45, 1);
 
-    public static RegistryEntry<Potion> DOUBLEHEALTH = registerPotion("doublehealth", "doublehealth",
+    public static RegistryEntry<Potion> DOUBLE_HEALTH = registerPotion("double_health", "double_health",
             ModEffects.DOUBLE_HEALTH, 1, 0);
-    public static RegistryEntry<Potion> STRONG_DOUBLEHEALTH = registerPotion("doublehealth", "strong_doublehealth",
+    public static RegistryEntry<Potion> STRONG_DOUBLE_HEALTH = registerPotion("double_health", "strong_double_health",
             ModEffects.DOUBLE_HEALTH, 1, 1);
 
     public static RegistryEntry<Potion> RESURRECTION = registerPotion("resurrection", "resurrection",
@@ -159,6 +159,9 @@ public class ModPotion {
             ModEffects.SHORT_COOLDOWN, 20 * 60 * 3, 0);
     public static final RegistryEntry<Potion> LONG_SHORT_COOLDOWN = registerPotion("short_cooldown", "long_short_cooldown",
             ModEffects.SHORT_COOLDOWN, 20 * 60 * 8, 0);
+
+    public static final RegistryEntry<Potion> MASKING = registerPotion("masking", "masking",
+            ModEffects.MASKING, 1, 0);
 
 
     public static void register() {
@@ -194,14 +197,15 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.COPPER_INGOT, ModPotion.ALCHEMIST);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.FERMENTED_SPIDER_EYE, ModPotion.DEATH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.BEETROOT, ModPotion.SATURATION);
-            builder.registerPotionRecipe(Potions.STRONG_HEALING, Items.GOLDEN_APPLE, ModPotion.DOUBLEHEALTH);
+            builder.registerPotionRecipe(Potions.STRONG_HEALING, Items.GOLDEN_APPLE, ModPotion.DOUBLE_HEALTH);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotion.RESURRECTION);
             builder.registerPotionRecipe(ModPotion.RESURRECTION, Items.CLOCK, ModPotion.INFINITY);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.IRON_PICKAXE, ModPotion.HASTE);
             builder.registerPotionRecipe(ModPotion.HASTE, Items.FERMENTED_SPIDER_EYE, ModPotion.MINING_FATIGUE);
-            builder.registerPotionRecipe(ModPotion.STRONG_DOUBLEHEALTH, Items.TOTEM_OF_UNDYING, ModPotion.VITALITY);
+            builder.registerPotionRecipe(ModPotion.STRONG_DOUBLE_HEALTH, Items.TOTEM_OF_UNDYING, ModPotion.VITALITY);
             builder.registerPotionRecipe(Potions.AWKWARD, Items.CLOCK, ModPotion.SHORT_COOLDOWN);
             builder.registerPotionRecipe(ModPotion.SHORT_COOLDOWN, Items.FERMENTED_SPIDER_EYE, ModPotion.LONG_COOLDOWN);
+            builder.registerPotionRecipe(Potions.INVISIBILITY, Items.FERMENTED_SPIDER_EYE, ModPotion.MASKING);
 
             // version longue
             builder.registerPotionRecipe(ModPotion.LEVITATION, Items.REDSTONE, ModPotion.LONG_LEVITATION);
@@ -236,7 +240,7 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.ACID, Items.GLOWSTONE, ModPotion.STRONG_ACID);
             builder.registerPotionRecipe(ModPotion.THORNS, Items.GLOWSTONE, ModPotion.STRONG_THORNS);
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.GLOWSTONE, ModPotion.STRONG_SATURATION);
-            builder.registerPotionRecipe(ModPotion.DOUBLEHEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLEHEALTH);
+            builder.registerPotionRecipe(ModPotion.DOUBLE_HEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLE_HEALTH);
             builder.registerPotionRecipe(ModPotion.MINING_FATIGUE, Items.GLOWSTONE, ModPotion.STRONG_MINING_FATIGUE);
         });
     }

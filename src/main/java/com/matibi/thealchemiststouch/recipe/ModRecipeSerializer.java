@@ -13,6 +13,9 @@ public class ModRecipeSerializer {
     public static final SpecialCraftingRecipe.SpecialRecipeSerializer<CombinationRecipe> COMBINATION =
             new SpecialCraftingRecipe.SpecialRecipeSerializer<>(CombinationRecipe::new);
 
+    public static final SpecialCraftingRecipe.SpecialRecipeSerializer<FoodWithEffectRecipe> FOOD_WITH_EFFECT =
+            new SpecialCraftingRecipe.SpecialRecipeSerializer<>(FoodWithEffectRecipe::new);
+
     public static void register() {
         Registry.register(Registries.RECIPE_SERIALIZER,
                 Identifier.of(TheAlchemistsTouch.MOD_ID, "rune_from_potion"),
@@ -21,6 +24,10 @@ public class ModRecipeSerializer {
         Registry.register(Registries.RECIPE_SERIALIZER,
                 Identifier.of(TheAlchemistsTouch.MOD_ID, "combination"),
                 ModRecipeSerializer.COMBINATION);
+
+        Registry.register(Registries.RECIPE_SERIALIZER,
+                Identifier.of(TheAlchemistsTouch.MOD_ID, "food_with_effect_recipe"),
+                ModRecipeSerializer.FOOD_WITH_EFFECT);
 
     }
 }

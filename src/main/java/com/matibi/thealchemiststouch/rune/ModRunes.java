@@ -2,6 +2,7 @@ package com.matibi.thealchemiststouch.rune;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
 import com.matibi.thealchemiststouch.effect.ModEffects;
+import com.matibi.thealchemiststouch.group.ModItemGroups;
 import com.mojang.serialization.Lifecycle;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -43,7 +44,7 @@ public class ModRunes {
 
     public static RegistryEntry<Rune> RUNE_ALCHEMIST = registerRunes("alchemist", ModEffects.ALCHEMIST, 0);
 
-    public static RegistryEntry<Rune> RUNE_IGITION = registerRunes("ignition", ModEffects.IGNITION, 0);
+    public static RegistryEntry<Rune> RUNE_IGNITION = registerRunes("ignition", ModEffects.IGNITION, 0);
 
     public static RegistryEntry<Rune> registerRunes(String name, RegistryEntry<StatusEffect> effect, int amplifier) {
         Identifier id = Identifier.of(TheAlchemistsTouch.MOD_ID, name + "_rune");
@@ -59,16 +60,15 @@ public class ModRunes {
         entries.add(RUNE);
         for (RegistryEntry<Rune> entry : ModRunes.RUNE_REGISTRY.streamEntries().toList()) {
             ItemStack stack = Rune.getItemStack(entry);
-            if (!stack.isEmpty()) {
+            if (!stack.isEmpty())
                 entries.add(stack);
-            }
         }
     }
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod runes for " + TheAlchemistsTouch.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModRunes::customRunes);
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroups.ALCHEMY).register(ModRunes::customRunes);
 
     }
 }

@@ -49,10 +49,8 @@ public class RuneRecipe extends SpecialCraftingRecipe {
         ItemStack itemStack = craftingRecipeInput.getStackInSlot(1, 1);
         if (!itemStack.isOf(Items.POTION))
             return ItemStack.EMPTY;
-        else {
-            return Rune.getItemStack(itemStack.get(DataComponentTypes.POTION_CONTENTS), 8); // marche pas
-
-        }
+        else
+            return Rune.getItemStack(itemStack.get(DataComponentTypes.POTION_CONTENTS), 8);
     }
 
     @Override

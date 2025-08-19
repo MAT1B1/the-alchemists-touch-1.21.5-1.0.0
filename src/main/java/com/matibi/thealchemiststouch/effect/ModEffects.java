@@ -76,6 +76,9 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> SHORT_COOLDOWN = registerStatusEffects("short_cooldown",
             new ShortCooldownEffect());
 
+    public static final RegistryEntry<StatusEffect> MASKING = registerStatusEffects("masking",
+            new MaskingEffect());
+
     private static RegistryEntry<StatusEffect> registerStatusEffects(String name, StatusEffect effect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(TheAlchemistsTouch.MOD_ID, name), effect);
     }

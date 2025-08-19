@@ -15,7 +15,6 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class ModItemGroups {

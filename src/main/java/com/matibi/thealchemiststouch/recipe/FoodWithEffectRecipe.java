@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.recipe;
 
 import com.matibi.thealchemiststouch.effect.ModEffects;
+import com.matibi.thealchemiststouch.util.CombinationUtils;
 import it.unimi.dsi.fastutil.objects.ReferenceLinkedOpenHashSet;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.FoodComponent;
@@ -97,10 +98,10 @@ public class FoodWithEffectRecipe extends SpecialCraftingRecipe {
         }
 
         PotionContentsComponent merged = new PotionContentsComponent(
-                Optional.empty(), // Pas de potion vanilla
-                Optional.empty(), // Pas de couleur personnalisée
-                effects,          // Liste des effets combinés
-                Optional.empty() // Pas de nom personnalisé
+                Optional.empty(),
+                Optional.empty(),
+                CombinationUtils.combineEffect(effects),
+                Optional.empty()
         );
 
         ItemStack result = food.copyWithCount(1);

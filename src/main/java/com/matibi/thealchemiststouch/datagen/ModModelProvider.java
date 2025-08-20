@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.datagen;
 
 
+import com.matibi.thealchemiststouch.fluid.ModFluids;
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
@@ -25,6 +26,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.POISONOUS_CARROT, Models.GENERATED);
         itemModelGenerator.register(ModItems.ALCHEMIST_CORE, Models.GENERATED);
         itemModelGenerator.registerWithTintedOverlay(ModRunes.RUNE, new PotionTintSource(0x8a8a8a));
-
+        itemModelGenerator.register(ModFluids.POTION_BUCKET, Models.GENERATED);
     }
 }

@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.recipe;
 
 import com.matibi.thealchemiststouch.rune.ModRunes;
+import com.matibi.thealchemiststouch.util.CombinationUtils;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -14,9 +15,7 @@ import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class CombinationRecipe extends SpecialCraftingRecipe {
     public CombinationRecipe(CraftingRecipeCategory category) {
@@ -60,7 +59,6 @@ public class CombinationRecipe extends SpecialCraftingRecipe {
         Item firstPotion = null;
         List<StatusEffectInstance> effects = new ArrayList<>();
 
-        // Parcourir toutes les potions dans la grille de craft
         for (int i = 0; i < craftingRecipeInput.getHeight(); i++) {
             for (int j = 0; j < craftingRecipeInput.getWidth(); j++) {
                 ItemStack itemStack = craftingRecipeInput.getStackInSlot(j, i);
@@ -79,13 +77,12 @@ public class CombinationRecipe extends SpecialCraftingRecipe {
         ItemStack resultStack = new ItemStack(firstPotion);
 
         PotionContentsComponent combinedComponent = new PotionContentsComponent(
-                Optional.empty(), // Pas de potion vanilla
-                Optional.empty(), // Pas de couleur personnalisée
-                effects,          // Liste des effets combinés
-                Optional.of("mixed")  // Pas de nom personnalisé
+                Optional.empty(),
+                Optional.empty(),
+                CombinationUtils.combineEffect(effects),
+                Optional.of("mixed")
         );
 
-        // Ajouter les effets à la potion résultante
         resultStack.set(DataComponentTypes.POTION_CONTENTS, combinedComponent);
 
         return resultStack.copyWithCount(craftingRecipeInput.getStackCount());

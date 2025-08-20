@@ -15,6 +15,7 @@ public class TheAlchemistsTouchDataGenerator implements DataGeneratorEntrypoint 
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModLootTableGenerator::new);
+        pack.addProvider(ModFluidTagProvider::new);
 
 		// langage
 		pack.addProvider(ModFrenchLanguageProvider::new);

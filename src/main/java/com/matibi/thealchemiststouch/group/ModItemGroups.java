@@ -1,6 +1,7 @@
 package com.matibi.thealchemiststouch.group;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
+import com.matibi.thealchemiststouch.fluid.ModFluids;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemGroup;
@@ -28,6 +29,8 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(Items.POTION))
                     .displayName(Text.translatable("itemGroup.the-alchemists-touch.alchemy"))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModFluids.POTION_BUCKET);
+
                         var SKIP = java.util.Set.of(
                                 Potions.WATER.value(), Potions.AWKWARD.value(), Potions.THICK.value(), Potions.MUNDANE.value()
                         );

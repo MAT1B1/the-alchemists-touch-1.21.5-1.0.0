@@ -163,6 +163,18 @@ public class ModPotion {
     public static final RegistryEntry<Potion> MASKING = registerPotion("masking", "masking",
             ModEffects.MASKING, 1, 0);
 
+    public static final RegistryEntry<Potion> UNSTABLE = registerPotion("unstable", "unstable",
+            ModEffects.UNSTABLE, 1, 0);
+    public static final RegistryEntry<Potion> STRONG_UNSTABLE = registerPotion("unstable", "strong_unstable",
+            ModEffects.UNSTABLE, 1, 1);
+
+    public static final RegistryEntry<Potion> VAMPIRISM = registerPotion("vampirism", "vampirism",
+            ModEffects.VAMPIRISM, 20 * 60 * 3, 0);
+    public static final RegistryEntry<Potion> LONG_VAMPIRISM = registerPotion("vampirism", "long_vampirism",
+            ModEffects.VAMPIRISM, 20 * 60 * 8, 0);
+    public static final RegistryEntry<Potion> STRONG_VAMPIRISM = registerPotion("vampirism", "strong_vampirism",
+            ModEffects.VAMPIRISM, 20 * 60 * 3, 1);
+
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod potions for " + TheAlchemistsTouch.MOD_ID);
@@ -206,6 +218,7 @@ public class ModPotion {
             builder.registerPotionRecipe(Potions.AWKWARD, Items.CLOCK, ModPotion.SHORT_COOLDOWN);
             builder.registerPotionRecipe(ModPotion.SHORT_COOLDOWN, Items.FERMENTED_SPIDER_EYE, ModPotion.LONG_COOLDOWN);
             builder.registerPotionRecipe(Potions.INVISIBILITY, Items.FERMENTED_SPIDER_EYE, ModPotion.MASKING);
+            builder.registerPotionRecipe(Potions.AWKWARD, Items.IRON_SWORD, ModPotion.VAMPIRISM);
 
             // version longue
             builder.registerPotionRecipe(ModPotion.LEVITATION, Items.REDSTONE, ModPotion.LONG_LEVITATION);
@@ -231,6 +244,7 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.SHORT_COOLDOWN, Items.REDSTONE, ModPotion.LONG_SHORT_COOLDOWN);
             builder.registerPotionRecipe(ModPotion.LONG_COOLDOWN, Items.REDSTONE, ModPotion.LONG_LONG_COOLDOWN);
             builder.registerPotionRecipe(ModPotion.LONG_SHORT_COOLDOWN, Items.FERMENTED_SPIDER_EYE, ModPotion.LONG_LONG_COOLDOWN);
+            builder.registerPotionRecipe(ModPotion.VAMPIRISM, Items.REDSTONE, ModPotion.LONG_VAMPIRISM);
 
             // version strong
             builder.registerPotionRecipe(ModPotion.ALCOHOL, Items.GLOWSTONE, ModPotion.STRONG_ALCOHOL);
@@ -242,6 +256,8 @@ public class ModPotion {
             builder.registerPotionRecipe(ModPotion.SATURATION, Items.GLOWSTONE, ModPotion.STRONG_SATURATION);
             builder.registerPotionRecipe(ModPotion.DOUBLE_HEALTH, Items.GLOWSTONE, ModPotion.STRONG_DOUBLE_HEALTH);
             builder.registerPotionRecipe(ModPotion.MINING_FATIGUE, Items.GLOWSTONE, ModPotion.STRONG_MINING_FATIGUE);
+            builder.registerPotionRecipe(ModPotion.UNSTABLE, Items.GLOWSTONE, ModPotion.STRONG_UNSTABLE);
+            builder.registerPotionRecipe(ModPotion.VAMPIRISM, Items.GLOWSTONE, ModPotion.STRONG_VAMPIRISM);
         });
     }
 

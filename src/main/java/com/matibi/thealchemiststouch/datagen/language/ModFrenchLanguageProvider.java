@@ -47,6 +47,8 @@ public class ModFrenchLanguageProvider extends FabricLanguageProvider {
         register("long_cooldown", "Cooldown allongé");
         register("short_cooldown", "Cooldown réduit");
         register("masking", "Voile d'oublie");
+        register("unstable", "Instable", "Instable");
+        register("vampirism", "Vampirisme");
 
         // Effets custom avec rune
         registerWithRune("petrification", "Pétrification");
@@ -61,6 +63,7 @@ public class ModFrenchLanguageProvider extends FabricLanguageProvider {
         t.add("item.the-alchemists-touch.rune.effect.empty", "Rune");
         t.add("item.the-alchemists-touch.rune.effect.mixed", "Rune multi-effest");
         registerVanilla("mixed", "multi-effets");
+        t.add("item.the-alchemists-touch.potion_bucket", "Seau de Potion");
 
         // Messages spéciaux
         t.add("item.the-alchemists-touch.rune.block_only", "Les runes ne peuvent être utilisées que sur des blocs");

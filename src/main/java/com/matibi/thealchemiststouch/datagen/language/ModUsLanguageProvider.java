@@ -47,9 +47,11 @@ public class ModUsLanguageProvider extends FabricLanguageProvider {
         register("long_cooldown", "Long Cooldown");
         register("short_cooldown", "Short Cooldown");
         register("masking", "Hidden Effect");
+        registerReverse("unstable", "Unstable");
+        register("vampirism", "Vampirism");
 
         // Custom effects with rune
-        registerWithRune("petrification", "Petrification");                       // -> Rune of Petrification
+        registerWithRune("petrification", "Petrification");
         registerWithRune("acid", "Acidity");
         registerWithRune("ignition", "Ignition");
         registerWithRune("alchemist", "Alchemist");
@@ -60,10 +62,8 @@ public class ModUsLanguageProvider extends FabricLanguageProvider {
         t.add("item.the-alchemists-touch.alchemist_core", "Alchemist Core");
         t.add("item.the-alchemists-touch.rune.effect.empty", "Rune");
         t.add("item.the-alchemists-touch.rune.effect.mixed", "Multi-effect Rune");
-        t.add("item.minecraft.potion.effect.mixed", "Multi-effect Potion");
-        t.add("item.minecraft.splash_potion.effect.mixed", "Multi-effect Splash Potion");
-        t.add("item.minecraft.lingering_potion.effect.mixed", "Multi-effect Lingering Potion");
-        t.add("item.minecraft.tipped_arrow.effect.mixed", "Multi-effect Arrow");
+        registerVanillaReverse("mixed", "Multi-effect");
+        t.add("item.the-alchemists-touch.potion_bucket", "Potion Bucket");
 
         // Special messages
         t.add("item.the-alchemists-touch.rune.block_only", "Runes can only be used on blocks");
@@ -83,6 +83,18 @@ public class ModUsLanguageProvider extends FabricLanguageProvider {
         t.add("item.minecraft.splash_potion.effect." + id, "Splash Potion of " + name);
         t.add("item.minecraft.lingering_potion.effect." + id, "Lingering Potion of " + name);
         t.add("item.minecraft.tipped_arrow.effect." + id, "Arrow of " + name);
+    }
+
+    private void registerVanillaReverse(String id, String name) {
+        t.add("item.minecraft.potion.effect." + id,  name + " Potion");
+        t.add("item.minecraft.splash_potion.effect." + id, name + " Splash Potion");
+        t.add("item.minecraft.lingering_potion.effect." + id, name + " Lingering Potion");
+        t.add("item.minecraft.tipped_arrow.effect." + id, name + " Arrow");
+    }
+
+    private void registerReverse(String id, String name) {
+        registerVanillaReverse(id, name);
+        t.add("effect.the-alchemists-touch." + id, name);
     }
 
     private void register(String id, String name) {

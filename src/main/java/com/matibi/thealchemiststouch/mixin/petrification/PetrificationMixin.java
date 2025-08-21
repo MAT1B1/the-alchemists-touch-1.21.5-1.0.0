@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.mixin;
+package com.matibi.thealchemiststouch.mixin.petrification;
 
 import com.matibi.thealchemiststouch.effect.ModEffects;
 import net.minecraft.entity.LivingEntity;

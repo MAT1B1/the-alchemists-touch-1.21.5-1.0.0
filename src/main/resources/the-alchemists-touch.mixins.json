@@ -10,7 +10,6 @@
     "MerchantEntityMixin",
     "MobEntityMixin",
     "MouseMixin",
-    "PetrificationMixin",
     "PlayerInputMixin",
     "ReactivationMixin",
     "ResurrectionMixin",
@@ -18,9 +17,16 @@
     "brewingNpotion.BrewingStandAccessor",
     "brewingNpotion.BrewingStandBlockEntityMixin",
     "brewingNpotion.LingeringPotionItemMixin",
-    "brewingNpotion.SplashPotionItemMixin"
+    "brewingNpotion.SplashPotionItemMixin",
+    "petrification.PetrificationMixin",
+    "petrification.PetrifiedTrackedFlagMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "petrification.PetrificationArmMixin",
+    "petrification.PetrifiedStateDuck",
+    "petrification.PetrifiedTextureMixin"
+  ]
 }

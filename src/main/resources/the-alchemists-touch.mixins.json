@@ -3,22 +3,30 @@
   "package": "com.matibi.thealchemiststouch.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "BrewingStandAccessor",
-    "BrewingStandBlockEntityMixin",
-    "EntityMixin",
+    "AcidMixin",
     "HungerManagerAccessor",
-    "LingeringPotionItemMixin",
     "LiquidWalkerMixin",
-    "LivingEntityMixin",
+    "MaskingMixin",
     "MerchantEntityMixin",
     "MobEntityMixin",
     "MouseMixin",
-    "PlayerEntityMixin",
     "PlayerInputMixin",
-    "ServerWorldMixin",
-    "SplashPotionItemMixin"
+    "ReactivationMixin",
+    "ResurrectionMixin",
+    "VampirismMixin",
+    "brewingNpotion.BrewingStandAccessor",
+    "brewingNpotion.BrewingStandBlockEntityMixin",
+    "brewingNpotion.LingeringPotionItemMixin",
+    "brewingNpotion.SplashPotionItemMixin",
+    "petrification.PetrificationMixin",
+    "petrification.PetrifiedTrackedFlagMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "petrification.PetrificationArmMixin",
+    "petrification.PetrifiedStateDuck",
+    "petrification.PetrifiedTextureMixin"
+  ]
 }

@@ -10,6 +10,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -55,18 +56,24 @@ public class ModItems {
     }
 
     private static void customFood(FabricItemGroupEntries entries) {
-        entries.add(POISONOUS_CARROT);
-        entries.add(POISONOUS_BEETROOT);
+        entries.addAfter(Items.GOLDEN_CARROT, POISONOUS_CARROT);
+        entries.addAfter(Items.BEETROOT, POISONOUS_BEETROOT);
+        entries.getDisplayStacks().removeIf(s ->
+                s.isOf(Items.POTION) ||
+                s.isOf(Items.SPLASH_POTION) ||
+                s.isOf(Items.LINGERING_POTION) ||
+                s.isOf(Items.TIPPED_ARROW));
+
     }
 
     private static void customItem(FabricItemGroupEntries entries) {
-        entries.add(ModItems.ALCHEMIST_CORE);
+        entries.addAfter(Items.NETHER_WART, ModItems.ALCHEMIST_CORE);
     }
 
     public static void register() {
         TheAlchemistsTouch.LOGGER.info("Registering mod items for " + TheAlchemistsTouch.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::customFood);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::customItem);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::customItem);
     }
 }

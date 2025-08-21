@@ -16,15 +16,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Blocks.DETECTABLE_ORES)
-                .addOptionalTag(BlockTags.COPPER_ORES.id())
-                .addOptionalTag(BlockTags.DIAMOND_ORES.id())
-                .addOptionalTag(BlockTags.GOLD_ORES.id())
-                .addOptionalTag(BlockTags.EMERALD_ORES.id())
-                .addOptionalTag(BlockTags.IRON_ORES.id())
-                .addOptionalTag(BlockTags.LAPIS_ORES.id())
-                .addOptionalTag(BlockTags.REDSTONE_ORES.id())
-                .addOptionalTag(BlockTags.COAL_ORES.id())
+        valueLookupBuilder(ModTags.Blocks.DETECTABLE_ORES)
+                .addOptionalTag(BlockTags.COPPER_ORES)
+                .addOptionalTag(BlockTags.DIAMOND_ORES)
+                .addOptionalTag(BlockTags.GOLD_ORES)
+                .addOptionalTag(BlockTags.EMERALD_ORES)
+                .addOptionalTag(BlockTags.IRON_ORES)
+                .addOptionalTag(BlockTags.LAPIS_ORES)
+                .addOptionalTag(BlockTags.REDSTONE_ORES)
+                .addOptionalTag(BlockTags.COAL_ORES)
                 .add(Blocks.NETHER_GOLD_ORE)
                 .add(Blocks.NETHER_QUARTZ_ORE)
                 .add(Blocks.ANCIENT_DEBRIS);

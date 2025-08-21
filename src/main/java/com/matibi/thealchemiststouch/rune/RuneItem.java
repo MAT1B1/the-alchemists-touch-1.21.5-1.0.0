@@ -24,9 +24,8 @@ public class RuneItem extends PotionItem {
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        if (!world.isClient) {
+        if (!world.isClient)
             user.sendMessage(Text.translatable("item.the-alchemists-touch.rune.block_only"), true);
-        }
         return ActionResult.FAIL;
     }
 
@@ -46,9 +45,9 @@ public class RuneItem extends PotionItem {
         for (StatusEffectInstance effect : contents.getEffects()) {
             StatusEffect effectType = effect.getEffectType().value();
             if (effectType instanceof TerrainApplicableEffect terrainEffect) {
-                if (!terrainEffect.isBlockApplicable(serverWorld, pos) && user != null) {
+                if (!terrainEffect.isBlockApplicable(serverWorld, pos) && user != null)
                     user.sendMessage(Text.translatable("item.the-alchemists-touch.rune.block_not_good"), true);
-                } else
+                else
                     terrainEffect.applyOnBlock(serverWorld, pos, effect.getDuration(), effect.getAmplifier());
             }
         }

@@ -6,7 +6,7 @@ A Fabric mod that overhauls the potion system with a more strategic, flexible, a
 
 - Dozens of new potions with unique and powerful effects  
 - A new magical item: **runes**, crafted from valid potions and used for terrain-based alchemy  
-- Alternative brewing ingredients available early in the game  
+- Alternative brewing ingredients are available early in the game  
 - Stackable potions with built-in cooldowns to prevent spamming
 - Multi-effect potion (craftable in a Crafting Table)
 
@@ -15,7 +15,7 @@ A Fabric mod that overhauls the potion system with a more strategic, flexible, a
 - <strong>Two new toxic crop drops</strong>: Poisonous Carrot and Poisonous Beetroot, rare variants of their edible counterparts.
 - <strong>Lava buckets can now fuel brewing stands</strong>, but provide only minimal fuel compared to blaze powder.
 - The <strong>Alchemist Core</strong>, a powerful craftable item, acts as a replacement for Nether Wart in potion brewing — though it’s significantly harder to obtain.
-<details> <summary><strong></strong>Potions with changed ingredients</strong></summary>
+<details> <summary><strong></strong>Potions with changed ingredients</summary>
 🔥 <strong>Fire Resistance</strong> – Now can be brewed using <em>Magma Block</em> and Magma Cream
  <br>
 🍎 <strong>Regeneration</strong> – Now can be brewed using <em>Golden Apple</em> and Ghast Tear
@@ -30,7 +30,7 @@ A Fabric mod that overhauls the potion system with a more strategic, flexible, a
 
 ## New Potions
 <details>
-<summary>Clik to expand</summary>
+<summary>Click to expand</summary>
 <br>
 <details>
 <summary><strong>🪶 Levitation</strong></summary>  
@@ -254,7 +254,7 @@ Not all effects are supported, and the player takes 2 hearts of damage per effec
 
 These special items are extracted from custom potions using a crafting recipe. When right-clicked on blocks, **terrain-applicable runes** trigger powerful localized effects.
 <br>
-be careful: only one effect can be applied  to a rune.
+be careful: only one effect can be applied to a rune.
 <br>
 <strong>Rune recipe:</strong>
 <br>
@@ -267,7 +267,7 @@ be careful: only one effect can be applied  to a rune.
 Only certain runes are compatible with this interaction:  
  <details>
 <summary><strong>🧪 Rune of Acid</strong></summary>  
-Destroys most blocks upon contact, mimicking acid corrosion (can not destoy blocks if the hardness is too hight).  
+Destroys most blocks upon contact, mimicking acid corrosion (cannot destroy blocks if the hardness is too high).  
  <br>
 <sub><strong>base:</strong> Acid Potion</sub>  
   <br>
@@ -276,7 +276,7 @@ Destroys most blocks upon contact, mimicking acid corrosion (can not destoy bloc
 
 <details>
 <summary><strong>🧪 Rune of Strong Acid</strong></summary>  
-Same as the regular Acid rune, but cthe radius is wider and can destroy more blocks.  
+Same as the regular Acid rune, but the radius is wider and can destroy more blocks.  
  <br>
 <sub><strong>Base:</strong>Potion of Acidity II</sub>  
   <br>

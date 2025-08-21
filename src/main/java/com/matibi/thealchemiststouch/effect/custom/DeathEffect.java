@@ -7,6 +7,8 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 public class DeathEffect extends StatusEffect {
     public DeathEffect() {
         super(StatusEffectCategory.HARMFUL, 0x000000);
@@ -29,6 +31,11 @@ public class DeathEffect extends StatusEffect {
                 float currentHealth = target.getHealth();
 
                 if (currentHealth > maxHealth / 2) {
+                    if (attacker != null) {
+                        float dmg = Objects.requireNonNull(attacker.getControllingPassenger()).getMaxHealth();
+                        attacker.damage(world, world.getDamageSources().magic(), dmg);
+                    }
+
                     target.setHealth(maxHealth / 2);
                 }
             } else {

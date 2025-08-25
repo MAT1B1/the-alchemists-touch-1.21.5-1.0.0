@@ -8,8 +8,6 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
-
 public class DeathEffect extends StatusEffect {
     public DeathEffect() {
         super(StatusEffectCategory.HARMFUL, 0x000000);

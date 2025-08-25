@@ -36,7 +36,7 @@ public class IgnitionEffect extends StatusEffect implements TerrainApplicableEff
     }
 
     public IgnitionEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xFF4500); // Couleur orangée
+        super(StatusEffectCategory.HARMFUL, 0xFF4500);
     }
 
     @Override

@@ -5,6 +5,7 @@
   "mixins": [
     "AcidMixin",
     "HungerManagerAccessor",
+    "IgnitionMixin",
     "LiquidWalkerMixin",
     "MaskingMixin",
     "MerchantEntityMixin",
@@ -18,6 +19,7 @@
     "brewingNpotion.BrewingStandBlockEntityMixin",
     "brewingNpotion.LingeringPotionItemMixin",
     "brewingNpotion.SplashPotionItemMixin",
+    "imbuedWeapon.ItemPostHitMixin",
     "petrification.PetrificationMixin",
     "petrification.PetrifiedTrackedFlagMixin"
   ],

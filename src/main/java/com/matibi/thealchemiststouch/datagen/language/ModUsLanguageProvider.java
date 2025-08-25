@@ -60,10 +60,9 @@ public class ModUsLanguageProvider extends FabricLanguageProvider {
         t.add("item.the-alchemists-touch.poisonous_carrot", "Poisonous Carrot");
         t.add("item.the-alchemists-touch.poisonous_beetroot", "Poisonous Beetroot");
         t.add("item.the-alchemists-touch.alchemist_core", "Alchemist Core");
-        t.add("item.the-alchemists-touch.rune.effect.empty", "Rune");
-        t.add("item.the-alchemists-touch.rune.effect.mixed", "Multi-effect Rune");
+        t.add("item.the-alchemists-touch.rune.effect.empty", "Alchemical Stones");
+        t.add("item.the-alchemists-touch.rune.effect.mixed", "Multi-effect Alchemical Stones");
         registerVanillaReverse("mixed", "Multi-effect");
-        t.add("item.the-alchemists-touch.potion_bucket", "Potion Bucket");
 
         // Special messages
         t.add("item.the-alchemists-touch.rune.block_only", "Runes can only be used on blocks");
@@ -71,11 +70,12 @@ public class ModUsLanguageProvider extends FabricLanguageProvider {
         t.add("itemGroup.the-alchemists-touch.alchemy", "Alchemy");
         t.add("splash.the-alchemists-touch.magic", "Alchemy is power !!!");
         t.add("splash.the-alchemists-touch.thanks", "Thank you for supporting me LivelyBadGood");
+        t.add("tooltip.the-alchemists-touch.imbued_line", "%s (%s hits remaining)");
     }
 
     private void registerWithRune(String id, String name) {
         register(id, name);
-        t.add("item.the-alchemists-touch.rune.effect." + id, "Rune of " + name);
+        t.add("item.the-alchemists-touch.rune.effect." + id, "Alchemical Stones of " + name);
     }
 
     private void registerVanilla(String id, String name) {

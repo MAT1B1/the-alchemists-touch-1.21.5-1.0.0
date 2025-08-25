@@ -5,6 +5,7 @@ import com.matibi.thealchemiststouch.effect.TerrainApplicableEffect;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
@@ -35,18 +36,6 @@ public class PetrificationEffect extends StatusEffect implements TerrainApplicab
                 -1.0D,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
-    }
-
-    @Override
-    public void onApplied(LivingEntity entity, int amplifier) {
-        entity.setInvulnerable(true);
-        super.onApplied(entity, amplifier);
-    }
-
-    @Override
-    public void onEntityRemoval(ServerWorld world, LivingEntity entity, int amplifier, Entity.RemovalReason reason) {
-        entity.setInvulnerable(false);
-        super.onEntityRemoval(world, entity, amplifier, reason);
     }
 
     @Override

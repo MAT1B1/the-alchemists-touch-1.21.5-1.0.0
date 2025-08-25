@@ -38,8 +38,8 @@ public class CombinationUtils {
             else countHarm.incrementAndGet();
         });
 
-        return (countBenef.get() <= countHarm.get() + 1 &&
-                countHarm.get() <= countBenef.get() + 1)
+        return ((countBenef.get() + countHarm.get() <= 2) || (countBenef.get() <= countHarm.get() + 1 &&
+                countHarm.get() <= countBenef.get() + 1))
                 ? cleaned
                 : List.of(new StatusEffectInstance(ModEffects.UNSTABLE, 1));
     }

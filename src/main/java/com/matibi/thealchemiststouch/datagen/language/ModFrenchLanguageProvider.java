@@ -60,17 +60,17 @@ public class ModFrenchLanguageProvider extends FabricLanguageProvider {
         t.add("item.the-alchemists-touch.poisonous_carrot", "Carotte empoisonnée");
         t.add("item.the-alchemists-touch.poisonous_beetroot", "Betterave empoisonnée");
         t.add("item.the-alchemists-touch.alchemist_core", "Noyau d'Alchimiste");
-        t.add("item.the-alchemists-touch.rune.effect.empty", "Rune");
-        t.add("item.the-alchemists-touch.rune.effect.mixed", "Rune multi-effest");
+        t.add("item.the-alchemists-touch.rune.effect.empty", "Pierre alchimique");
+        t.add("item.the-alchemists-touch.rune.effect.mixed", "Pierre alchimique multi-effest");
         registerVanilla("mixed", "multi-effets");
-        t.add("item.the-alchemists-touch.potion_bucket", "Seau de Potion");
 
         // Messages spéciaux
-        t.add("item.the-alchemists-touch.rune.block_only", "Les runes ne peuvent être utilisées que sur des blocs");
+        t.add("item.the-alchemists-touch.rune.block_only", "Les pierres alchimiques ne peuvent être utilisées que sur des blocs");
         t.add("item.the-alchemists-touch.rune.block_not_good", "Le bloc n'est pas compatible");
         t.add("itemGroup.the-alchemists-touch.alchemy", "Alchimie");
         t.add("splash.the-alchemists-touch.magic", "L'Alchimie c'est le pouvoir !!!");
         t.add("splash.the-alchemists-touch.thanks", "Merci de me supporter LivelyBadGood");
+        t.add("tooltip.the-alchemists-touch.imbued_line", "%s (%s coups restants)");
     }
 
     private void registerWithRune(String id, String name) {
@@ -79,7 +79,7 @@ public class ModFrenchLanguageProvider extends FabricLanguageProvider {
 
     private void registerWithRune(String id, String effect_name, String name) {
         register(id, effect_name, name);
-        t.add("item.the-alchemists-touch.rune.effect." + id, "Rune " + name);
+        t.add("item.the-alchemists-touch.rune.effect." + id, "Pierre alchimique " + name);
     }
 
     private void registerVanilla(String id, String name) {

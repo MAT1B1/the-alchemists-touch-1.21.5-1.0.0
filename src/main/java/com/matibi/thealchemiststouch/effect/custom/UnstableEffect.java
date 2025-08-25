@@ -34,10 +34,26 @@ public class UnstableEffect extends StatusEffect {
     }
 
     @Override
-    public boolean isInstant() {return true;}
+    public boolean isInstant() {
+        return true;
+    }
+
+    @Override
+    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
+        applyEffect(world, null, null, entity, amplifier, 1.0D);
+        return super.applyUpdateEffect(world, entity, amplifier);
+    }
+
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {return true;}
 
     @Override
     public void applyInstantEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
+        applyEffect(world, effectEntity, attacker, target, amplifier, proximity);
+        super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
+    }
+
+    private static void applyEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
         Random r = world.getRandom();
 
         float explodeChance = Math.min(0.1f + 0.10f * amplifier, 0.60f);
@@ -71,7 +87,5 @@ public class UnstableEffect extends StatusEffect {
             world.playSound(null, target.getBlockPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
                     SoundCategory.PLAYERS, 0.7f, 0.9f + r.nextFloat() * 0.2f);
         }
-
-        super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
     }
 }

@@ -20,14 +20,21 @@ public class TeleportationEffect extends StatusEffect {
     }
 
     @Override
-    public void applyInstantEffect(
-            ServerWorld world,
-            @Nullable Entity effectSource,
-            @Nullable Entity attacker,
-            LivingEntity target,
-            int amplifier,
-            double proximity
-    ) {
+    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
+        applyEffect(world, null, null, entity, amplifier, 1.0D);
+        return super.applyUpdateEffect(world, entity, amplifier);
+    }
+
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {return true;}
+
+    @Override
+    public void applyInstantEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
+        applyEffect(world, effectEntity, attacker, target, amplifier, proximity);
+        super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
+    }
+
+    private static void applyEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
         double radius = 8.0 + world.random.nextDouble() * 8.0;
         double angle = world.random.nextDouble() * 2 * Math.PI;
         double dx = Math.cos(angle) * radius;

@@ -63,7 +63,7 @@ Greatly reduces vision.<br>
 <details>
 <summary><strong>🦵 Long Leg</strong></summary>
 Raises step height so you can walk over blocks.<br>
-<sub><strong>Base:</strong> Awkward<br><strong>Ingredient:</strong> Bamboo<br><strong>Variants:</strong> Long, Extra-Long</sub><br><br>
+<sub><strong>Base:</strong> Awkward<br><strong>Ingredient:</strong> Bamboo<br><strong>Variants:</strong> Long</sub><br><br>
 </details>
 
 <details>
@@ -195,13 +195,13 @@ Applies Mining Fatigue.<br>
 <details>
 <summary><strong>⏱️ Short Cooldown</strong></summary>
 Reduces potion cooldowns in this mod’s system.<br>
-<sub><strong>Base:</strong> Awkward<br><strong>Ingredient:</strong> Clock<br><strong>Variants:</strong> Extended (Long Short Cooldown)</sub><br><br>
+<sub><strong>Base:</strong> Awkward<br><strong>Ingredient:</strong> Clock<br><strong>Variants:</strong> Long</sub><br><br>
 </details>
 
 <details>
 <summary><strong>⏳ Long Cooldown</strong></summary>
 Increases potion cooldowns in this mod’s system.<br>
-<sub><strong>Base:</strong> Short Cooldown<br><strong>Ingredient:</strong> Fermented Spider Eye<br><strong>Variants:</strong> Extended (Long Long Cooldown)</sub><br><br>
+<sub><strong>Base:</strong> Short Cooldown<br><strong>Ingredient:</strong> Fermented Spider Eye<br><strong>Variants:</strong> Long</sub><br><br>
 </details>
 
 <details>

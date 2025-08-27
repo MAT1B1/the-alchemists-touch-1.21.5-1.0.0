@@ -12,11 +12,9 @@ public class ModNetworking {
 
         ServerPlayNetworking.registerGlobalReceiver(
                 ShootFireballC2SPayload.ID,
-                (payload, context) -> {
-                    context.server().execute(() ->
-                            FireballUtil.spawnFireball(context.player())
-                    );
-                }
+                (payload, context) -> context.server().execute(() ->
+                        FireballUtil.spawnFireball(context.player())
+                )
         );
     }
 }

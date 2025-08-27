@@ -25,7 +25,21 @@ public class AlchemistEffect extends StatusEffect implements TerrainApplicableEf
     }
 
     @Override
+    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
+        applyEffect(world, null, null, entity, amplifier, 1.0D);
+        return super.applyUpdateEffect(world, entity, amplifier);
+    }
+
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {return true;}
+
+    @Override
     public void applyInstantEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
+        applyEffect(world, effectEntity, attacker, target, amplifier, proximity);
+        super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
+    }
+
+    private static void applyEffect(ServerWorld world, @Nullable Entity effectEntity, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
         if (!(target instanceof PlayerEntity player)) return;
 
         ItemStack offhand = player.getOffHandStack();
@@ -39,8 +53,6 @@ public class AlchemistEffect extends StatusEffect implements TerrainApplicableEf
             player.setStackInHand(Hand.OFF_HAND, new ItemStack(Items.GOLD_ORE, count));
         else if (offhand.getItem() == Items.DEEPSLATE_COAL_ORE)
             player.setStackInHand(Hand.OFF_HAND, new ItemStack(Items.DEEPSLATE_GOLD_ORE, count));
-
-        super.applyInstantEffect(world, effectEntity, attacker, target, amplifier, proximity);
     }
 
     @Override

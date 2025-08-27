@@ -24,6 +24,7 @@ public record Rune(Identifier id, RegistryEntry<StatusEffect> effect, int amplif
 
         return getItemStack(rune.effect(), rune.amplifier());
     }
+
     public static ItemStack getItemStack(PotionContentsComponent contents, int number) {
 
         if (contents == null || !contents.hasEffects())

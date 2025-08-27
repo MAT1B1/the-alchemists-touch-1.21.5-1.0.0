@@ -2,6 +2,8 @@ package com.matibi.thealchemiststouch.datagen;
 
 import com.matibi.thealchemiststouch.item.ModItems;
 import com.matibi.thealchemiststouch.recipe.CombinationRecipe;
+import com.matibi.thealchemiststouch.recipe.FoodWithEffectRecipe;
+import com.matibi.thealchemiststouch.recipe.ImbuedEffectRecipe;
 import com.matibi.thealchemiststouch.recipe.RuneRecipe;
 import com.matibi.thealchemiststouch.rune.ModRunes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -54,6 +56,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(exporter, "rune_recipe");
                 ComplexRecipeJsonBuilder.create(CombinationRecipe::new)
                         .offerTo(exporter, "combination_recipe");
+                ComplexRecipeJsonBuilder.create(FoodWithEffectRecipe::new)
+                        .offerTo(exporter, "food_with_effect_recipe");
+                ComplexRecipeJsonBuilder.create(ImbuedEffectRecipe::new)
+                        .offerTo(exporter, "imbued_effect_recipe");
             }
         };
     }

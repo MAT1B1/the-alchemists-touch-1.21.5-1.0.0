@@ -58,10 +58,7 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> SATURATION = registerStatusEffects("saturation",
             new SaturationEffect());
 
-    public static final RegistryEntry<StatusEffect> ACTIVATION = registerStatusEffects("activation",
-            new ActivationEffect());
-
-    public static final RegistryEntry<StatusEffect> DOUBLEHEALTH = registerStatusEffects("doublehealth",
+    public static final RegistryEntry<StatusEffect> DOUBLE_HEALTH = registerStatusEffects("double_health",
             new DoubleHealthEffect());
 
     public static final RegistryEntry<StatusEffect> RESURRECTION = registerStatusEffects("resurrection",
@@ -70,11 +67,23 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> INFINITY = registerStatusEffects("infinity",
             new InfinityEffect());
 
-    public static final RegistryEntry<StatusEffect> SILENCE = registerStatusEffects("silence",
-            new SilenceEffect());
+    public static final RegistryEntry<StatusEffect> VITALITY = registerStatusEffects("vitality",
+            new VitalityEffect());
 
-    public static final RegistryEntry<StatusEffect> SEDATIVE = registerStatusEffects("sedative",
-            new SedativeEffect());
+    public static final RegistryEntry<StatusEffect> LONG_COOLDOWN = registerStatusEffects("long_cooldown",
+            new LongCooldownEffect());
+
+    public static final RegistryEntry<StatusEffect> SHORT_COOLDOWN = registerStatusEffects("short_cooldown",
+            new ShortCooldownEffect());
+
+    public static final RegistryEntry<StatusEffect> MASKING = registerStatusEffects("masking",
+            new MaskingEffect());
+
+    public static final RegistryEntry<StatusEffect> UNSTABLE = registerStatusEffects("unstable",
+            new UnstableEffect());
+
+    public static final RegistryEntry<StatusEffect> VAMPIRISM = registerStatusEffects("vampirism",
+            new VampirismEffect());
 
     private static RegistryEntry<StatusEffect> registerStatusEffects(String name, StatusEffect effect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(TheAlchemistsTouch.MOD_ID, name), effect);

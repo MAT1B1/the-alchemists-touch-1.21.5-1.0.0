@@ -5,6 +5,7 @@ import com.matibi.thealchemiststouch.rune.Rune;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.IngredientPlacement;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
@@ -39,14 +40,17 @@ public class RuneRecipe extends SpecialCraftingRecipe {
             return false;
     }
 
+    @Override
+    public IngredientPlacement getIngredientPlacement() {
+        return super.getIngredientPlacement();
+    }
+
     public ItemStack craft(CraftingRecipeInput craftingRecipeInput, RegistryWrapper.WrapperLookup wrapperLookup) {
         ItemStack itemStack = craftingRecipeInput.getStackInSlot(1, 1);
         if (!itemStack.isOf(Items.POTION))
             return ItemStack.EMPTY;
-        else {
-            return Rune.getItemStack(itemStack.get(DataComponentTypes.POTION_CONTENTS), 8); // marche pas
-
-        }
+        else
+            return Rune.getItemStack(itemStack.get(DataComponentTypes.POTION_CONTENTS), 8);
     }
 
     @Override

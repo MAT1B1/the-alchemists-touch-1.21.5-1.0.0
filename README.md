@@ -4,8 +4,7 @@ A Fabric mod that completely reworks the potion system with new mechanics, recip
 The goal is to make potion brewing more strategic, versatile, and useful both in early and late game.
 ### Features
 
-
-- **20+ new potions** with unique gameplay effects (from Petrification to Ore Sense and Infinity)
+- **30+ new potions** with unique gameplay effects (from Petrification to Ore Sense and Infinity)
 - **Alternative brewing system** with early-game ingredients (e.g., Magma Blocks, Golden Apples, Lily Pads…)
 - **Alchemist Core**: replaces Nether Wart as the base for brewing, but is harder to obtain
 - **Stackable potions** with built-in cooldowns to avoid spamming
@@ -111,7 +110,7 @@ Deals corrosive damage over time to entities/blocks.<br>
 
 <details>
 <summary><strong>🔥 Ignition</strong></summary>
-Ignites targets.<br>
+Ignites targets and make player able to throw fireballs.<br>
 <sub><strong>Base:</strong> Fire Resistance<br><strong>Ingredient:</strong> Fermented Spider Eye<br><strong>Variants:</strong> Long</sub><br><br>
 </details>
 
@@ -135,7 +134,7 @@ Disorients players / makes hostile mobs fight each other / improves villager tra
 
 <details>
 <summary><strong>❄️ Frost</strong></summary>
-Applies heavy slowness and disables jumping.<br>
+Applies heavy slowness and applies damages.<br>
 <sub><strong>Base:</strong> Awkward<br><strong>Ingredient:</strong> Snowball<br><strong>Variants:</strong> Long</sub><br><br>
 </details>
 
@@ -313,6 +312,36 @@ Transform blocks like a furnace will do
 
 - Potions can be combined with food
 - Eating that food applies the effect
+
+</details>
+
+## 🆕 What's New in The Alchemist’s Touch
+<details>
+<summary>Click to expand</summary>  
+
+### ⚗️ Potions
+- 8 new potions
+- 3 potions effect rework (death, infinity and ignition)
+- some changes in some potion recipe
+- Multi-effect crafting options reworked
+
+### 🪨 Alchemy Stones
+- Renamed Runes → **Alchemy Stones**, with updated recipes, lore and visuals.
+
+### 🗡️ Imbued Weapons
+- New system: weapons can be **infused with potion effects**.
+- Infusions have **limited charges** and apply potion effects on hit.
+- Custom green **glint rendering** for imbued weapons.
+
+### 🍲 Potions in Food
+- Potions can now be **combined with food**.
+- Eating food applies the potion’s effect.
+
+### 👀 Visual update on some effects
+
+### 🌍 French Translation
+
+### 💬 3 New Splash Texts
 
 </details>
 

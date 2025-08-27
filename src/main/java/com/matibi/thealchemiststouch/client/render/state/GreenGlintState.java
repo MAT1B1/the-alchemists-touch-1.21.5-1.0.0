@@ -1,4 +1,4 @@
-package com.matibi.thealchemiststouch.client.render;
+package com.matibi.thealchemiststouch.client.render.state;
 
 public final class GreenGlintState {
     private static final ThreadLocal<Boolean> ENABLED = ThreadLocal.withInitial(() -> false);

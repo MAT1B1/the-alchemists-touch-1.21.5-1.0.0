@@ -1,6 +1,6 @@
 package com.matibi.thealchemiststouch.mixin.imbuedWeapon;
 
-import com.matibi.thealchemiststouch.client.render.GreenGlintState;
+import com.matibi.thealchemiststouch.client.render.state.GreenGlintState;
 import com.matibi.thealchemiststouch.datacomponent.ModDataComponents;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.entity.LivingEntity;

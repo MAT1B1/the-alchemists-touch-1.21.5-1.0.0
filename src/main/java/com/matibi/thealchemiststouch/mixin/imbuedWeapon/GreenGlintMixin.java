@@ -1,18 +1,15 @@
 package com.matibi.thealchemiststouch.mixin.imbuedWeapon;
 
 import com.matibi.thealchemiststouch.TheAlchemistsTouch;
-import com.matibi.thealchemiststouch.client.render.GreenGlintState;
+import com.matibi.thealchemiststouch.client.render.state.GreenGlintState;
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.render.*;
-import net.minecraft.client.render.RenderPhase.*;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.awt.*;
 
 @Mixin(RenderLayer.class)
 public abstract class GreenGlintMixin {
